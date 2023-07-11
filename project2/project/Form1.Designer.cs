@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            orterTabOpenButton = new Button();
+            orderTabOpenButton = new Button();
             menuTabOpenButton = new Button();
             repoTabOpenButton = new Button();
             SuspendLayout();
             // 
-            // orterTabOpenButton
+            // orderTabOpenButton
             // 
-            orterTabOpenButton.Location = new Point(147, 123);
-            orterTabOpenButton.Name = "orterTabOpenButton";
-            orterTabOpenButton.Size = new Size(75, 23);
-            orterTabOpenButton.TabIndex = 1;
-            orterTabOpenButton.Text = "Order";
-            orterTabOpenButton.UseVisualStyleBackColor = true;
-            orterTabOpenButton.Click += orterTabOpenButton_Click;
+            orderTabOpenButton.Location = new Point(147, 123);
+            orderTabOpenButton.Name = "orderTabOpenButton";
+            orderTabOpenButton.Size = new Size(75, 23);
+            orderTabOpenButton.TabIndex = 1;
+            orderTabOpenButton.Text = "Order";
+            orderTabOpenButton.UseVisualStyleBackColor = true;
+            orderTabOpenButton.Click += orderTabOpenButton_Click;
             // 
             // menuTabOpenButton
             // 
@@ -70,7 +70,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(repoTabOpenButton);
             Controls.Add(menuTabOpenButton);
-            Controls.Add(orterTabOpenButton);
+            Controls.Add(orderTabOpenButton);
             Name = "Form1";
             Text = "Restaurant Management System";
             Load += Form1_Load;
@@ -79,7 +79,7 @@
 
         #endregion
 
-        private Button orterTabOpenButton;
+        private Button orderTabOpenButton;
         private Button menuTabOpenButton;
         private Button repoTabOpenButton;
     }

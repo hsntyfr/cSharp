@@ -1,12 +1,13 @@
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Collections.Generic;
 using System.Security.Policy;
+using System.Windows.Forms;
 
 namespace project
 {
 
     public partial class Form1 : Form
-    { 
+    {
 
         public Form1()
         {
@@ -15,24 +16,26 @@ namespace project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Material.materials = Material.Read("C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
-            List<Material> lista = new List<Material>();
+            Material.materials = Material.ReadMaterial("C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
 
 
-            DateTime da = DateTime.Now;
-            Material mat = new Material("abc", da, da, 12, 12);
-            Material mat1 = new Material("sssc", da, da, 12, 12);
-            Material mat2 = new Material("adddddc", da, da, 12, 12);
-            Material mat3 = new Material("adddddc", da, da, 12, 12);
 
-            lista.Add(mat);
-            lista.Add(mat2);
-            lista.Add(mat1);
-            lista.Add(mat3);
+            //List<Material> lista = new List<Material>();
+
+            //DateTime da = DateTime.Now;
+            //Material mat = new Material("abc", da, da, 12, 12);
+            //Material mat1 = new Material("sssc", da, da, 12, 12);
+            //Material mat2 = new Material("adddddc", da, da, 12, 12);
+            //Material mat3 = new Material("adddddc", da, da, 12, 12);
+
+            //lista.Add(mat);
+            //lista.Add(mat2);
+            //lista.Add(mat1);
+            //lista.Add(mat3);
 
         }
 
-        private void orterTabOpenButton_Click(object sender, EventArgs e)
+        private void orderTabOpenButton_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
             form2.Show();

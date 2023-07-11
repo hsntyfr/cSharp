@@ -30,13 +30,18 @@
         {
             materialCombobox = new ComboBox();
             materialTextBox = new TextBox();
-            materialsButton = new Button();
+            materialAddButton = new Button();
+            materialLabel = new Label();
+            showButton = new Button();
+            materialEditButton = new Button();
+            saveMaterialButton = new Button();
+            deleteMaterialButton = new Button();
             SuspendLayout();
             // 
             // materialCombobox
             // 
             materialCombobox.FormattingEnabled = true;
-            materialCombobox.Location = new Point(137, 76);
+            materialCombobox.Location = new Point(59, 59);
             materialCombobox.Name = "materialCombobox";
             materialCombobox.Size = new Size(121, 23);
             materialCombobox.TabIndex = 0;
@@ -44,27 +49,81 @@
             // 
             // materialTextBox
             // 
-            materialTextBox.Location = new Point(388, 76);
+            materialTextBox.Location = new Point(299, 59);
             materialTextBox.Name = "materialTextBox";
-            materialTextBox.Size = new Size(100, 23);
+            materialTextBox.Size = new Size(265, 23);
             materialTextBox.TabIndex = 1;
             // 
-            // materialsButton
+            // materialAddButton
             // 
-            materialsButton.Location = new Point(413, 146);
-            materialsButton.Name = "materialsButton";
-            materialsButton.Size = new Size(75, 23);
-            materialsButton.TabIndex = 2;
-            materialsButton.Text = "button1";
-            materialsButton.UseVisualStyleBackColor = true;
-            materialsButton.Click += materialsButton_Click;
+            materialAddButton.Location = new Point(260, 141);
+            materialAddButton.Name = "materialAddButton";
+            materialAddButton.Size = new Size(75, 23);
+            materialAddButton.TabIndex = 2;
+            materialAddButton.Text = "Add";
+            materialAddButton.UseVisualStyleBackColor = true;
+            materialAddButton.Click += materialAddButton_Click;
+            // 
+            // materialLabel
+            // 
+            materialLabel.AutoSize = true;
+            materialLabel.Location = new Point(607, 84);
+            materialLabel.Name = "materialLabel";
+            materialLabel.Size = new Size(128, 15);
+            materialLabel.TabIndex = 3;
+            materialLabel.Text = "Material is not selected";
+            // 
+            // showButton
+            // 
+            showButton.Location = new Point(260, 191);
+            showButton.Name = "showButton";
+            showButton.Size = new Size(75, 23);
+            showButton.TabIndex = 4;
+            showButton.Text = "Show";
+            showButton.UseVisualStyleBackColor = true;
+            showButton.Click += showButton_Click;
+            // 
+            // materialEditButton
+            // 
+            materialEditButton.Location = new Point(401, 141);
+            materialEditButton.Name = "materialEditButton";
+            materialEditButton.Size = new Size(75, 23);
+            materialEditButton.TabIndex = 5;
+            materialEditButton.Text = "Edit";
+            materialEditButton.UseVisualStyleBackColor = true;
+            materialEditButton.Click += materialEditButton_Click;
+            // 
+            // saveMaterialButton
+            // 
+            saveMaterialButton.Location = new Point(401, 191);
+            saveMaterialButton.Name = "saveMaterialButton";
+            saveMaterialButton.Size = new Size(75, 23);
+            saveMaterialButton.TabIndex = 6;
+            saveMaterialButton.Text = "Save";
+            saveMaterialButton.UseVisualStyleBackColor = true;
+            saveMaterialButton.Click += saveMaterialButton_Click;
+            // 
+            // deleteMaterialButton
+            // 
+            deleteMaterialButton.Location = new Point(260, 255);
+            deleteMaterialButton.Name = "deleteMaterialButton";
+            deleteMaterialButton.Size = new Size(75, 23);
+            deleteMaterialButton.TabIndex = 7;
+            deleteMaterialButton.Text = "Delete";
+            deleteMaterialButton.UseVisualStyleBackColor = true;
+            deleteMaterialButton.Click += deleteMaterialButton_Click;
             // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(materialsButton);
+            Controls.Add(deleteMaterialButton);
+            Controls.Add(saveMaterialButton);
+            Controls.Add(materialEditButton);
+            Controls.Add(showButton);
+            Controls.Add(materialLabel);
+            Controls.Add(materialAddButton);
             Controls.Add(materialTextBox);
             Controls.Add(materialCombobox);
             Name = "Form3";
@@ -79,6 +138,11 @@
 
         public ComboBox materialCombobox;
         public TextBox materialTextBox;
-        public Button materialsButton;
+        public Button materialAddButton;
+        private Label materialLabel;
+        private Button showButton;
+        private Button materialEditButton;
+        private Button saveMaterialButton;
+        private Button deleteMaterialButton;
     }
 }

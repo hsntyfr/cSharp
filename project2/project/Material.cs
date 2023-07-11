@@ -34,7 +34,7 @@ namespace project
                 }
             }
         }
-        public static List<Material> Read(string filePath)
+        public static List<Material> ReadMaterial(string filePath)
         {
             List<Material> materials = new List<Material>();
 
@@ -62,18 +62,14 @@ namespace project
             return materials;
         }
 
-        public static void LoadMaterials()
-        {
-            Form3 form3 = new Form3();
-            string path = "C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt";
-            List<Material> materialsb = Read(path);
-            form3.materialCombobox.Items.Add(4444);
+        //public static void LoadMaterials(List<Material> materials)
+        //{
+        //    Form3 form3 = new Form3();
 
-
-            foreach (Material material in materialsb)
-            {
-                form3.materialCombobox.Items.Add(material.name);
-            }
-        }
+        //    foreach (Material material in materials)
+        //    {
+        //        form3.materialCombobox.Items.Add(material.name);
+        //    }
+        //}
     }
 }

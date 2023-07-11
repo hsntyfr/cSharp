@@ -1,13 +1,17 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace project
 {
@@ -30,11 +34,13 @@ namespace project
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            materialCombobox.Items.Add(111);
-            Material.LoadMaterials();
+            foreach (Material material in Material.materials)
+            {
+                this.materialCombobox.Items.Add(material.name);
+            }
         }
 
-        private void materialsButton_Click(object sender, EventArgs e)
+        private void materialAddButton_Click(object sender, EventArgs e)
         {
             string newMaterial = materialTextBox.Text;
             string[] data = newMaterial.Split(',');
@@ -52,6 +58,63 @@ namespace project
                 Material.Write(Material.materials, "C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
             }
 
+        }
+
+        private void showButton_Click(object sender, EventArgs e)
+        {
+            string selectedMaterial = materialCombobox.SelectedIndex.ToString();
+            int selectedMaterialIndex = int.Parse(selectedMaterial);
+            Material showedMaterial = Material.materials[selectedMaterialIndex];
+            materialLabel.Text = "Material Name: " + showedMaterial.name + "\r" + "Production Date: " + showedMaterial.productionDate.ToString() + "\r" + "Expiration Date: " + showedMaterial.expirationDate.ToString() + "\r" + "Stock: " + showedMaterial.stock.ToString() + "\r" + "Price: " + showedMaterial.price.ToString();
+
+        }
+
+        private void materialEditButton_Click(object sender, EventArgs e)
+        {
+            string selectedMaterial = materialCombobox.SelectedIndex.ToString();
+            int selectedMaterialIndex = int.Parse(selectedMaterial);
+            Material showedMaterial = Material.materials[selectedMaterialIndex];
+            materialTextBox.Text = $"{showedMaterial.name},{showedMaterial.productionDate},{showedMaterial.expirationDate},{showedMaterial.stock},{showedMaterial.price}";
+
+        }
+
+        private void saveMaterialButton_Click(object sender, EventArgs e)
+        {
+
+            string selectedMaterial = materialCombobox.SelectedIndex.ToString();
+            int selectedMaterialIndex = int.Parse(selectedMaterial);
+            string[] edittedMaterialText = materialTextBox.Text.Split(",");
+            Material.materials[selectedMaterialIndex].name = edittedMaterialText[0];
+            Material.materials[selectedMaterialIndex].productionDate = DateTime.Parse(edittedMaterialText[1]);
+            Material.materials[selectedMaterialIndex].expirationDate = DateTime.Parse(edittedMaterialText[2]);
+            Material.materials[selectedMaterialIndex].stock = float.Parse(edittedMaterialText[3]);
+            Material.materials[selectedMaterialIndex].price = float.Parse(edittedMaterialText[4]);
+            materialTextBox.Text = "";
+            materialLabel.Text = "Material is changed";
+        }
+
+        private void deleteMaterialButton_Click(object sender, EventArgs e)
+        {
+            string selectedMaterial = materialCombobox.SelectedIndex.ToString();
+            int selectedMaterialIndex = int.Parse(selectedMaterial);
+            List<Material> newMaterials = new List<Material>();
+            foreach (Material material in Material.materials)
+            {
+                if (material.name != Material.materials[selectedMaterialIndex].name)
+                {
+                    newMaterials.Add(material);
+                    Material.Write(newMaterials, "C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt");
+                }
+            }
+            //Material.materials[selectedMaterialIndex] = null;
+            //Material.Write(Material.materials, "C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt");
+            //string[] edittedMaterialText = materialTextBox.Text.Split(",");
+            //Material.materials[selectedMaterialIndex].name = edittedMaterialText[0];
+            //Material.materials[selectedMaterialIndex].productionDate = DateTime.Parse(edittedMaterialText[1]);
+            //Material.materials[selectedMaterialIndex].expirationDate = DateTime.Parse(edittedMaterialText[2]);
+            //Material.materials[selectedMaterialIndex].stock = float.Parse(edittedMaterialText[3]);
+            //Material.materials[selectedMaterialIndex].price = float.Parse(edittedMaterialText[4]);
+            materialLabel.Text = "Material is deleted";
         }
     }
 }
