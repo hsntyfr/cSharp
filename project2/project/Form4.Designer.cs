@@ -28,106 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
+            foodLabel = new Label();
             menuTextbox = new TextBox();
-            mealCombobox = new ComboBox();
-            saladCombobox = new ComboBox();
-            snackCombobox = new ComboBox();
-            desertCombobox = new ComboBox();
+            foodCombobox = new ComboBox();
+            foodAddButton = new Button();
+            showButton = new Button();
+            editFoodButton = new Button();
+            saveFoodButton = new Button();
+            deleteFoodButton = new Button();
             SuspendLayout();
             // 
-            // label1
+            // foodLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(87, 89);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Meals";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(256, 89);
-            label2.Name = "label2";
-            label2.Size = new Size(40, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Salads";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(477, 89);
-            label3.Name = "label3";
-            label3.Size = new Size(43, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Snacks";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(664, 89);
-            label4.Name = "label4";
-            label4.Size = new Size(45, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Deserts";
+            foodLabel.AutoSize = true;
+            foodLabel.Location = new Point(649, 31);
+            foodLabel.Name = "foodLabel";
+            foodLabel.Size = new Size(112, 15);
+            foodLabel.TabIndex = 3;
+            foodLabel.Text = "Food is not selected";
             // 
             // menuTextbox
             // 
-            menuTextbox.Location = new Point(196, 31);
+            menuTextbox.Location = new Point(141, 31);
             menuTextbox.Name = "menuTextbox";
             menuTextbox.Size = new Size(413, 23);
             menuTextbox.TabIndex = 4;
             // 
-            // mealCombobox
+            // foodCombobox
             // 
-            mealCombobox.FormattingEnabled = true;
-            mealCombobox.Location = new Point(53, 119);
-            mealCombobox.Name = "mealCombobox";
-            mealCombobox.Size = new Size(121, 23);
-            mealCombobox.TabIndex = 5;
+            foodCombobox.FormattingEnabled = true;
+            foodCombobox.Location = new Point(173, 109);
+            foodCombobox.Name = "foodCombobox";
+            foodCombobox.Size = new Size(121, 23);
+            foodCombobox.TabIndex = 6;
             // 
-            // saladCombobox
+            // foodAddButton
             // 
-            saladCombobox.FormattingEnabled = true;
-            saladCombobox.Location = new Point(224, 119);
-            saladCombobox.Name = "saladCombobox";
-            saladCombobox.Size = new Size(121, 23);
-            saladCombobox.TabIndex = 6;
+            foodAddButton.Location = new Point(390, 109);
+            foodAddButton.Name = "foodAddButton";
+            foodAddButton.Size = new Size(75, 23);
+            foodAddButton.TabIndex = 7;
+            foodAddButton.Text = "Add";
+            foodAddButton.UseVisualStyleBackColor = true;
+            foodAddButton.Click += foodAddButton_Click;
             // 
-            // snackCombobox
+            // showButton
             // 
-            snackCombobox.FormattingEnabled = true;
-            snackCombobox.Location = new Point(427, 119);
-            snackCombobox.Name = "snackCombobox";
-            snackCombobox.Size = new Size(121, 23);
-            snackCombobox.TabIndex = 7;
+            showButton.Location = new Point(390, 165);
+            showButton.Name = "showButton";
+            showButton.Size = new Size(75, 23);
+            showButton.TabIndex = 8;
+            showButton.Text = "Show";
+            showButton.UseVisualStyleBackColor = true;
+            showButton.Click += showButton_Click;
             // 
-            // desertCombobox
+            // editFoodButton
             // 
-            desertCombobox.FormattingEnabled = true;
-            desertCombobox.Location = new Point(624, 119);
-            desertCombobox.Name = "desertCombobox";
-            desertCombobox.Size = new Size(121, 23);
-            desertCombobox.TabIndex = 8;
+            editFoodButton.Location = new Point(390, 226);
+            editFoodButton.Name = "editFoodButton";
+            editFoodButton.Size = new Size(75, 23);
+            editFoodButton.TabIndex = 9;
+            editFoodButton.Text = "Edit";
+            editFoodButton.UseVisualStyleBackColor = true;
+            editFoodButton.Click += editFoodButton_Click;
+            // 
+            // saveFoodButton
+            // 
+            saveFoodButton.Location = new Point(506, 108);
+            saveFoodButton.Name = "saveFoodButton";
+            saveFoodButton.Size = new Size(75, 23);
+            saveFoodButton.TabIndex = 10;
+            saveFoodButton.Text = "Save";
+            saveFoodButton.UseVisualStyleBackColor = true;
+            saveFoodButton.Click += saveFoodButton_Click;
+            // 
+            // deleteFoodButton
+            // 
+            deleteFoodButton.Location = new Point(506, 165);
+            deleteFoodButton.Name = "deleteFoodButton";
+            deleteFoodButton.Size = new Size(75, 23);
+            deleteFoodButton.TabIndex = 11;
+            deleteFoodButton.Text = "Delete";
+            deleteFoodButton.UseVisualStyleBackColor = true;
+            deleteFoodButton.Click += deleteFoodButton_Click;
             // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(desertCombobox);
-            Controls.Add(snackCombobox);
-            Controls.Add(saladCombobox);
-            Controls.Add(mealCombobox);
+            Controls.Add(deleteFoodButton);
+            Controls.Add(saveFoodButton);
+            Controls.Add(editFoodButton);
+            Controls.Add(showButton);
+            Controls.Add(foodAddButton);
+            Controls.Add(foodCombobox);
             Controls.Add(menuTextbox);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(foodLabel);
             Name = "Form4";
             Text = "v";
             FormClosing += Form4_FormClosing;
@@ -137,15 +134,13 @@
         }
 
         #endregion
-
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
+        private Label foodLabel;
         public TextBox menuTextbox;
-        private ComboBox mealCombobox;
-        private ComboBox saladCombobox;
-        private ComboBox snackCombobox;
-        private ComboBox desertCombobox;
+        private ComboBox foodCombobox;
+        private Button foodAddButton;
+        private Button showButton;
+        private Button editFoodButton;
+        private Button saveFoodButton;
+        private Button deleteFoodButton;
     }
 }

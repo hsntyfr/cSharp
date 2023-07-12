@@ -6,44 +6,56 @@ using System.Threading.Tasks;
 
 namespace project
 {
-    abstract public class Food
+    public class Food
     {
-        public static List<Salad> salads = new List<Salad>();
-        public static List<Desert> deserts = new List<Desert>();
-        public static List<Meal> meals = new List<Meal>();
-        public static List<Snack> snacks = new List<Snack>();
+        public static List<Food> foods = new List<Food>();
+        public static List<Food> recipes = new List<Food>();
 
-        public int kind;
+
+
         public string name { get; set; }
         public float price { get; set; }
         public int tax { get; set; }
-
-        public Food(int kind, string name, float price, int tax)
-        {
-            this.kind = kind;
-            this.name = name;
-            this.price = price;
-            this.tax = tax;
-        }
- 
-    }
-    public class Salad : Food
-    {
         public string material1 { get; set; }
         public string material2 { get; set; }
         public string material3 { get; set; }
+        public string material4 { get; set; }
 
-        public Salad(int kind, string name, float price, int tax, string material1, string material2, string material3) : base(kind, name, price, tax)
 
+        public Food(string name, float price, int tax, string material1, string material2, string material3, string material4)
         {
+            this.name = name;
+            this.price = price;
+            this.tax = tax;
             this.material1 = material1;
             this.material2 = material2;
             this.material3 = material3;
+            this.material4 = material4;
 
         }
-        public static List<Salad> ReadSalad(string filePath)
+        public static void WriteFood(List<Food> foods, string filePath)
         {
-            List<Salad> salads = new List<Salad>();
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                foreach (Food food in foods)
+                {
+                    writer.WriteLine($"{food.name},{food.price},{food.tax},{food.material1},{food.material2},{food.material3},{food.material4}");
+                }
+            }
+        }
+        public static void WriteRecipe(List<Food> foods, string filePath)
+        {
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                foreach (Food food in foods)
+                {
+                    writer.WriteLine($"{food.name},{food.material1},{food.material2},{food.material3},{food.material4}");
+                }
+            }
+        }
+        public static List<Food> ReadFood(string filePath)
+        {
+            List<Food> foods = new List<Food>();
 
             using (StreamReader reader = new StreamReader(filePath))
             {
@@ -54,70 +66,66 @@ namespace project
 
                     if (data.Length == 7)
                     {
-                        int kind = int.Parse(data[0]);
-                        string name = data[1];
-                        int price = int.Parse(data[2]);
-                        int tax = int.Parse(data[3]);
-                        string material1 = data[4];
-                        string material2 = data[5];
-                        string material3 = data[6];
+                        string name = data[0];
+                        float price = float.Parse(data[1]);
+                        int tax = int.Parse(data[2]);
+                        string material1 = data[3];
+                        string material2 = data[4];
+                        string material3 = data[5];
+                        string material4 = data[6];
 
-                        Salad salad = new Salad(kind, name, price, tax, material1, material2, material3);
-                        salads.Add(salad);
+                        Food food = new Food(name, price, tax, material1, material2, material3, material4);
+                        foods.Add(food);
                     }
                 }
             }
-            return salads;
+
+            return foods;
         }
-        //write salad yazılacak
+        
+
+    }
+    public class Salad : Food
+    {
+        
+
+        public Salad(string name, float price, int tax, string material1, string material2, string material3, string material4) : base(name, price, tax, material1, material2, material3, material4)
+
+        {
+            
+
+        }
+        
 
     }
     public class Desert : Food
     {
-        public Material material1 { get; set; }
-        public Material material2 { get; set; }
-        public Material material3 { get; set; }
 
-        public Desert(int kind, string name, float price, int tax, Material material1, Material material2, Material material3) : base(kind, name, price, tax)
+        public Desert(string name, float price, int tax, string material1, string material2, string material3, string material4) : base(name, price, tax, material1, material2, material3, material4)
 
         {
-            this.material1 = material1;
-            this.material2 = material2;
-            this.material3 = material3;
+            
 
         }
     }
     
     public class Meal : Food
     {
-        public Material material1 { get; set; }
-        public Material material2 { get; set; }
-        public Material material3 { get; set; }
-        public Material material4 { get; set; }
-        public Material material5 { get; set; }
 
-        public Meal(int kind, string name, float price, int tax, Material material1, Material material2, Material material3, Material material4, Material material5) : base(kind, name, price, tax)
+
+        public Meal(string name, float price, int tax, string material1, string material2, string material3, string material4) : base(name, price, tax, material1, material2, material3, material4)
 
         {
-            this.material1 = material1;
-            this.material2 = material2;
-            this.material3 = material3;
-            this.material4 = material4;
-            this.material5 = material5;
+            
         }
     }
     public class Snack : Food
     {
-        public Material material1 { get; set; }
-        public Material material2 { get; set; }
-        public Material material3 { get; set; }
 
-        public Snack(int kind, string name, float price, int tax, Material material1, Material material2, Material material3) : base(kind, name, price, tax)
+        public Snack(string name, float price, int tax, string material1, string material2, string material3, string material4) : base(name, price, tax, material1, material2, material3, material4)
 
         {
-            this.material1 = material1;
-            this.material2 = material2;
-            this.material3 = material3;
+
         }
     }
 

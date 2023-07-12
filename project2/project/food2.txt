@@ -1,0 +1,3 @@
+hasan,99,99,domates,tuz,patlıcan,tuz
+denme,15,15,a,b,c,d
+engin,15,15,a,b,c,d

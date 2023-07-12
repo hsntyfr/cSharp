@@ -17,6 +17,7 @@ namespace project
         private void Form1_Load(object sender, EventArgs e)
         {
             Material.materials = Material.ReadMaterial("C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
+            Food.foods = Food.ReadFood("C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
 
 
 

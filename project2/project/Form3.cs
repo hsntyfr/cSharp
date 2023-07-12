@@ -91,6 +91,10 @@ namespace project
             Material.materials[selectedMaterialIndex].price = float.Parse(edittedMaterialText[4]);
             materialTextBox.Text = "";
             materialLabel.Text = "Material is changed";
+            foreach (Material material in Material.materials)
+            {
+                Material.Write(Material.materials, "C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt");
+            }
         }
 
         private void deleteMaterialButton_Click(object sender, EventArgs e)
