@@ -94,6 +94,9 @@ namespace project
             foreach (Material material in Material.materials)
             {
                 Material.Write(Material.materials, "C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt");
+                //File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
+                //File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
+                //bitişte akfitfleştir
             }
         }
 
@@ -108,6 +111,9 @@ namespace project
                 {
                     newMaterials.Add(material);
                     Material.Write(newMaterials, "C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt");
+                    //File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
+                    //File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
+                    //bitişte akfitfleştir
                 }
             }
             //Material.materials[selectedMaterialIndex] = null;
@@ -119,6 +125,13 @@ namespace project
             //Material.materials[selectedMaterialIndex].stock = float.Parse(edittedMaterialText[3]);
             //Material.materials[selectedMaterialIndex].price = float.Parse(edittedMaterialText[4]);
             materialLabel.Text = "Material is deleted";
+        }
+
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }

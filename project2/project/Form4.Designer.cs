@@ -36,6 +36,7 @@
             editFoodButton = new Button();
             saveFoodButton = new Button();
             deleteFoodButton = new Button();
+            homeButton = new Button();
             SuspendLayout();
             // 
             // foodLabel
@@ -43,9 +44,9 @@
             foodLabel.AutoSize = true;
             foodLabel.Location = new Point(649, 31);
             foodLabel.Name = "foodLabel";
-            foodLabel.Size = new Size(112, 15);
+            foodLabel.Size = new Size(112, 75);
             foodLabel.TabIndex = 3;
-            foodLabel.Text = "Food is not selected";
+            foodLabel.Text = "Food is not selected\r\n1-Salad\r\n2-Meal\r\n3-Snack\r\n4-Desert\r\n";
             // 
             // menuTextbox
             // 
@@ -112,11 +113,22 @@
             deleteFoodButton.UseVisualStyleBackColor = true;
             deleteFoodButton.Click += deleteFoodButton_Click;
             // 
+            // homeButton
+            // 
+            homeButton.Location = new Point(506, 226);
+            homeButton.Name = "homeButton";
+            homeButton.Size = new Size(75, 23);
+            homeButton.TabIndex = 12;
+            homeButton.Text = "Home";
+            homeButton.UseVisualStyleBackColor = true;
+            homeButton.Click += homeButton_Click;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(homeButton);
             Controls.Add(deleteFoodButton);
             Controls.Add(saveFoodButton);
             Controls.Add(editFoodButton);
@@ -126,7 +138,7 @@
             Controls.Add(menuTextbox);
             Controls.Add(foodLabel);
             Name = "Form4";
-            Text = "v";
+            Text = "Menu";
             FormClosing += Form4_FormClosing;
             Load += Form4_Load;
             ResumeLayout(false);
@@ -142,5 +154,6 @@
         private Button editFoodButton;
         private Button saveFoodButton;
         private Button deleteFoodButton;
+        private Button homeButton;
     }
 }

@@ -28,13 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            homeButton = new Button();
             SuspendLayout();
+            // 
+            // homeButton
+            // 
+            homeButton.Location = new Point(438, 212);
+            homeButton.Name = "homeButton";
+            homeButton.Size = new Size(75, 23);
+            homeButton.TabIndex = 0;
+            homeButton.Text = "Home";
+            homeButton.UseVisualStyleBackColor = true;
+            homeButton.Click += homeButton_Click;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(homeButton);
             Name = "Form2";
             Text = "Order";
             FormClosing += Form2_FormClosing;
@@ -42,5 +54,7 @@
         }
 
         #endregion
+
+        private Button homeButton;
     }
 }

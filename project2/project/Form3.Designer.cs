@@ -36,6 +36,7 @@
             materialEditButton = new Button();
             saveMaterialButton = new Button();
             deleteMaterialButton = new Button();
+            homeButton = new Button();
             SuspendLayout();
             // 
             // materialCombobox
@@ -113,11 +114,22 @@
             deleteMaterialButton.UseVisualStyleBackColor = true;
             deleteMaterialButton.Click += deleteMaterialButton_Click;
             // 
+            // homeButton
+            // 
+            homeButton.Location = new Point(401, 255);
+            homeButton.Name = "homeButton";
+            homeButton.Size = new Size(75, 23);
+            homeButton.TabIndex = 8;
+            homeButton.Text = "Home";
+            homeButton.UseVisualStyleBackColor = true;
+            homeButton.Click += homeButton_Click;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(homeButton);
             Controls.Add(deleteMaterialButton);
             Controls.Add(saveMaterialButton);
             Controls.Add(materialEditButton);
@@ -144,5 +156,6 @@
         private Button materialEditButton;
         private Button saveMaterialButton;
         private Button deleteMaterialButton;
+        private Button homeButton;
     }
 }

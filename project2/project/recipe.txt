@@ -1,3 +1,4 @@
 hasan,domates,biber,patlıcan,tuz
 denme,a,b,c,d
 engin,a,b,c,d
+yemek,a,b,c,c

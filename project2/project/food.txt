@@ -1,3 +1,1 @@
-hasan,15,15,domates,biber,patlıcan,tuz
-denme,15,15,a,b,c,d
-engin,15,15,a,b,c,d
+4,yemek,15,15,a,15,b,15,c,15,c,15
