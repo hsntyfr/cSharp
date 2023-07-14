@@ -1,4 +1,4 @@
-hasan,domates,biber,patlıcan,tuz
-denme,a,b,c,d
-engin,a,b,c,d
-yemek,a,b,c,c
+4,yemek,a,15,b,15,c,15,c,15
+4,aaaaak,a,15,b,15,c,15,c,15
+4,mmmmmmmmmmm,a,15,b,15,c,15,c,15
+4,qqq,a,15,b,15,c,15,c,15

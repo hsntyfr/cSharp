@@ -11,7 +11,6 @@ namespace project
         public static List<Food> foods = new List<Food>();
         public static List<Food> recipes = new List<Food>();
 
-
         public int kind { get; set; }
         public string name { get; set; }
         public float price { get; set; }
@@ -102,8 +101,7 @@ namespace project
     }
     public class Salad : Food
     {
-        
-
+        public int poriton;
         public Salad(int kind, string name, float price, int tax, string material1, float material1Amount, string material2, float material2Amount, string material3, float material3Amount, string material4, float material4Amount) : base(kind, name, price, tax, material1, material1Amount, material2, material2Amount, material3, material3Amount, material4, material4Amount)
 
         {
@@ -115,7 +113,7 @@ namespace project
     }
     public class Desert : Food
     {
-
+        int kind; //1->milk 2->sugar
         public Desert(int kind, string name, float price, int tax, string material1, float material1Amount, string material2, float material2Amount, string material3, float material3Amount, string material4, float material4Amount) : base(kind, name, price, tax, material1, material1Amount, material2, material2Amount, material3, material3Amount, material4, material4Amount)
 
         {
@@ -126,8 +124,7 @@ namespace project
     
     public class Meal : Food
     {
-
-
+        int vegan; //1->vegan 2->non-vegan
         public Meal(int kind, string name, float price, int tax, string material1, float material1Amount, string material2, float material2Amount, string material3, float material3Amount, string material4, float material4Amount) : base(kind, name, price, tax, material1, material1Amount, material2, material2Amount, material3, material3Amount, material4, material4Amount)
 
         {
@@ -136,7 +133,7 @@ namespace project
     }
     public class Snack : Food
     {
-
+        int hot; //1->hot service 2->cold service
         public Snack(int kind, string name, float price, int tax, string material1, float material1Amount, string material2, float material2Amount, string material3, float material3Amount, string material4, float material4Amount) : base(kind, name, price, tax, material1, material1Amount, material2, material2Amount, material3, material3Amount, material4, material4Amount)
 
         {

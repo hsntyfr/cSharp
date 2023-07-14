@@ -54,7 +54,7 @@ namespace project
                 Material material = new Material(name, productionDate, expirationDate, stock, price);
                 Material.materials.Add(material);
                 materialCombobox.Items.Add(material.name);
-                materialTextBox.Text = "";
+                materialTextBox.Text = string.Empty;
                 Material.Write(Material.materials, "C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
             }
 
@@ -89,7 +89,7 @@ namespace project
             Material.materials[selectedMaterialIndex].expirationDate = DateTime.Parse(edittedMaterialText[2]);
             Material.materials[selectedMaterialIndex].stock = float.Parse(edittedMaterialText[3]);
             Material.materials[selectedMaterialIndex].price = float.Parse(edittedMaterialText[4]);
-            materialTextBox.Text = "";
+            materialTextBox.Text = string.Empty;
             materialLabel.Text = "Material is changed";
             foreach (Material material in Material.materials)
             {
@@ -132,6 +132,12 @@ namespace project
             Form1 form1 = new Form1();
             form1.Show();
             this.Hide();
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            materialLabel.Text = string.Empty;
+            materialTextBox.Text = string.Empty;
         }
     }
 }

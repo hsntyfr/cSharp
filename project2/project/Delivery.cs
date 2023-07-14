@@ -8,6 +8,7 @@ namespace project
 {
     public class Delivery
     {
+        public static List<Food> deliveryCheck = new List<Food>();
         private List<Food> siparisListesi;
 
         public Delivery()

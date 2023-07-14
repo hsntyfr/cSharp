@@ -37,6 +37,7 @@
             saveFoodButton = new Button();
             deleteFoodButton = new Button();
             homeButton = new Button();
+            clearButton = new Button();
             SuspendLayout();
             // 
             // foodLabel
@@ -123,11 +124,22 @@
             homeButton.UseVisualStyleBackColor = true;
             homeButton.Click += homeButton_Click;
             // 
+            // clearButton
+            // 
+            clearButton.Location = new Point(506, 69);
+            clearButton.Name = "clearButton";
+            clearButton.Size = new Size(75, 23);
+            clearButton.TabIndex = 13;
+            clearButton.Text = "Clear";
+            clearButton.UseVisualStyleBackColor = true;
+            clearButton.Click += clearButton_Click;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(clearButton);
             Controls.Add(homeButton);
             Controls.Add(deleteFoodButton);
             Controls.Add(saveFoodButton);
@@ -155,5 +167,6 @@
         private Button saveFoodButton;
         private Button deleteFoodButton;
         private Button homeButton;
+        private Button clearButton;
     }
 }

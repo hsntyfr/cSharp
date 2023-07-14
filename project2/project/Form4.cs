@@ -94,7 +94,7 @@ namespace project
             Food.foods[selectedFoodIndex].material4 = edittedFoodText[10];
             Food.foods[selectedFoodIndex].material4Amount = float.Parse(edittedFoodText[11]);
 
-            menuTextbox.Text = "";
+            menuTextbox.Text = string.Empty;
             foodLabel.Text = "Food is editted";
             foreach (Food food in Food.foods)
             {
@@ -136,6 +136,12 @@ namespace project
             Form1 form1 = new Form1();
             form1.Show();
             this.Hide();
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            foodLabel.Text = string.Empty;
+            menuTextbox.Text = string.Empty;
         }
     }
 }
