@@ -39,48 +39,52 @@
             // 
             // homeButton
             // 
-            homeButton.Location = new Point(427, 262);
+            homeButton.BackColor = Color.GreenYellow;
+            homeButton.Location = new Point(680, 390);
             homeButton.Name = "homeButton";
             homeButton.Size = new Size(75, 23);
             homeButton.TabIndex = 0;
             homeButton.Text = "Home";
-            homeButton.UseVisualStyleBackColor = true;
+            homeButton.UseVisualStyleBackColor = false;
             homeButton.Click += homeButton_Click;
             // 
             // addFoodButton
             // 
-            addFoodButton.Location = new Point(277, 262);
+            addFoodButton.BackColor = Color.SkyBlue;
+            addFoodButton.Location = new Point(239, 212);
             addFoodButton.Name = "addFoodButton";
             addFoodButton.Size = new Size(75, 23);
             addFoodButton.TabIndex = 1;
             addFoodButton.Text = "Add";
-            addFoodButton.UseVisualStyleBackColor = true;
+            addFoodButton.UseVisualStyleBackColor = false;
             addFoodButton.Click += addFoodButton_Click;
             // 
             // removeFoodButton
             // 
-            removeFoodButton.Location = new Point(277, 221);
+            removeFoodButton.BackColor = Color.OrangeRed;
+            removeFoodButton.Location = new Point(379, 212);
             removeFoodButton.Name = "removeFoodButton";
             removeFoodButton.Size = new Size(75, 23);
             removeFoodButton.TabIndex = 2;
             removeFoodButton.Text = "Remove";
-            removeFoodButton.UseVisualStyleBackColor = true;
+            removeFoodButton.UseVisualStyleBackColor = false;
             removeFoodButton.Click += removeFoodButton_Click;
             // 
             // submitButton
             // 
-            submitButton.Location = new Point(277, 305);
+            submitButton.BackColor = Color.LightGreen;
+            submitButton.Location = new Point(512, 212);
             submitButton.Name = "submitButton";
             submitButton.Size = new Size(75, 23);
             submitButton.TabIndex = 3;
             submitButton.Text = "Submit";
-            submitButton.UseVisualStyleBackColor = true;
+            submitButton.UseVisualStyleBackColor = false;
             submitButton.Click += submitButton_Click;
             // 
             // orderCombobox
             // 
             orderCombobox.FormattingEnabled = true;
-            orderCombobox.Location = new Point(143, 63);
+            orderCombobox.Location = new Point(204, 97);
             orderCombobox.Name = "orderCombobox";
             orderCombobox.Size = new Size(121, 23);
             orderCombobox.TabIndex = 4;
@@ -88,7 +92,8 @@
             // orderLabel
             // 
             orderLabel.AutoSize = true;
-            orderLabel.Location = new Point(573, 63);
+            orderLabel.BackColor = Color.Gray;
+            orderLabel.Location = new Point(524, 45);
             orderLabel.Name = "orderLabel";
             orderLabel.Size = new Size(77, 15);
             orderLabel.TabIndex = 5;
@@ -97,7 +102,7 @@
             // orderReviewCombobox
             // 
             orderReviewCombobox.FormattingEnabled = true;
-            orderReviewCombobox.Location = new Point(550, 222);
+            orderReviewCombobox.Location = new Point(502, 97);
             orderReviewCombobox.Name = "orderReviewCombobox";
             orderReviewCombobox.Size = new Size(121, 23);
             orderReviewCombobox.TabIndex = 6;
@@ -106,6 +111,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SteelBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(orderReviewCombobox);
             Controls.Add(orderLabel);
@@ -127,9 +133,9 @@
         private Button homeButton;
         private Button addFoodButton;
         private Button removeFoodButton;
-        private ComboBox orderCombobox;
         public ComboBox orderReviewCombobox;
         private Button submitButton;
         public Label orderLabel;
+        public ComboBox orderCombobox;
     }
 }

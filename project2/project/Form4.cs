@@ -120,13 +120,20 @@ namespace project
                     newFoods.Add(food);
                     Food.WriteFood(newFoods, "C:\\Users\\Hasan\\source\\repos\\project\\project\\food2.txt");
                     Food.WriteRecipe(newFoods, "C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt");
-                    //File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
-                    //File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\food2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
-                    //File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
-                    //File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
-                    //bitişte akfitfleştir
+                    File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
+                    File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\food2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
+                    File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
+                    File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
 
                 }
+            }
+            Food.foods.Clear();
+            foodCombobox.Items.Clear();
+            Food.foods = Food.ReadFood("C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
+
+            foreach (Food food in Food.foods)
+            {
+                this.foodCombobox.Items.Add(food.name);
             }
             foodLabel.Text = "Food is deleted";
         }
@@ -140,7 +147,7 @@ namespace project
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            foodLabel.Text = string.Empty;
+            foodLabel.Text = "Food is not selected\r\n1-Salad\r\n2-Meal\r\n3-Snack\r\n4-Desert\r\n";
             menuTextbox.Text = string.Empty;
         }
     }

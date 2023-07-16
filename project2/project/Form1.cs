@@ -54,5 +54,10 @@ namespace project
             form4.Show();
             this.Hide();
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

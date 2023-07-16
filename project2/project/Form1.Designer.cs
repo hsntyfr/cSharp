@@ -31,43 +31,72 @@
             orderTabOpenButton = new Button();
             menuTabOpenButton = new Button();
             repoTabOpenButton = new Button();
+            label1 = new Label();
+            exitButton = new Button();
             SuspendLayout();
             // 
             // orderTabOpenButton
             // 
-            orderTabOpenButton.Location = new Point(147, 123);
+            orderTabOpenButton.BackColor = Color.Pink;
+            orderTabOpenButton.Location = new Point(150, 245);
             orderTabOpenButton.Name = "orderTabOpenButton";
             orderTabOpenButton.Size = new Size(75, 23);
             orderTabOpenButton.TabIndex = 1;
             orderTabOpenButton.Text = "Order";
-            orderTabOpenButton.UseVisualStyleBackColor = true;
+            orderTabOpenButton.UseVisualStyleBackColor = false;
             orderTabOpenButton.Click += orderTabOpenButton_Click;
             // 
             // menuTabOpenButton
             // 
-            menuTabOpenButton.Location = new Point(594, 123);
+            menuTabOpenButton.BackColor = Color.Pink;
+            menuTabOpenButton.Location = new Point(597, 245);
             menuTabOpenButton.Name = "menuTabOpenButton";
             menuTabOpenButton.Size = new Size(75, 23);
             menuTabOpenButton.TabIndex = 2;
             menuTabOpenButton.Text = "Menu";
-            menuTabOpenButton.UseVisualStyleBackColor = true;
+            menuTabOpenButton.UseVisualStyleBackColor = false;
             menuTabOpenButton.Click += menuTabOpenButton_Click;
             // 
             // repoTabOpenButton
             // 
-            repoTabOpenButton.Location = new Point(376, 123);
+            repoTabOpenButton.BackColor = Color.Pink;
+            repoTabOpenButton.Location = new Point(379, 245);
             repoTabOpenButton.Name = "repoTabOpenButton";
             repoTabOpenButton.Size = new Size(75, 23);
             repoTabOpenButton.TabIndex = 3;
             repoTabOpenButton.Text = "Repo";
-            repoTabOpenButton.UseVisualStyleBackColor = true;
+            repoTabOpenButton.UseVisualStyleBackColor = false;
             repoTabOpenButton.Click += repoTabOpenButton_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(323, 116);
+            label1.Name = "label1";
+            label1.Size = new Size(178, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Restaurant Management System";
+            // 
+            // exitButton
+            // 
+            exitButton.BackColor = Color.OrangeRed;
+            exitButton.Location = new Point(657, 373);
+            exitButton.Name = "exitButton";
+            exitButton.Size = new Size(75, 23);
+            exitButton.TabIndex = 5;
+            exitButton.Text = "Exit";
+            exitButton.UseVisualStyleBackColor = false;
+            exitButton.Click += exitButton_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SteelBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(exitButton);
+            Controls.Add(label1);
             Controls.Add(repoTabOpenButton);
             Controls.Add(menuTabOpenButton);
             Controls.Add(orderTabOpenButton);
@@ -75,6 +104,7 @@
             Text = "Restaurant Management System";
             Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -82,5 +112,7 @@
         private Button orderTabOpenButton;
         private Button menuTabOpenButton;
         private Button repoTabOpenButton;
+        private Label label1;
+        private Button exitButton;
     }
 }

@@ -35,28 +35,31 @@
             // 
             // okayButton
             // 
-            okayButton.Location = new Point(426, 264);
+            okayButton.BackColor = Color.GreenYellow;
+            okayButton.Location = new Point(424, 302);
             okayButton.Name = "okayButton";
             okayButton.Size = new Size(75, 23);
             okayButton.TabIndex = 0;
             okayButton.Text = "Okay";
-            okayButton.UseVisualStyleBackColor = true;
+            okayButton.UseVisualStyleBackColor = false;
             okayButton.Click += okayButton_Click;
             // 
             // backButton
             // 
-            backButton.Location = new Point(324, 264);
+            backButton.BackColor = Color.OrangeRed;
+            backButton.Location = new Point(322, 302);
             backButton.Name = "backButton";
             backButton.Size = new Size(75, 23);
             backButton.TabIndex = 1;
             backButton.Text = "Back";
-            backButton.UseVisualStyleBackColor = true;
+            backButton.UseVisualStyleBackColor = false;
             backButton.Click += backButton_Click;
             // 
             // orderReviewLabel
             // 
             orderReviewLabel.AutoSize = true;
-            orderReviewLabel.Location = new Point(346, 158);
+            orderReviewLabel.BackColor = Color.Gray;
+            orderReviewLabel.Location = new Point(411, 150);
             orderReviewLabel.Name = "orderReviewLabel";
             orderReviewLabel.Size = new Size(0, 15);
             orderReviewLabel.TabIndex = 2;
@@ -65,6 +68,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SteelBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(orderReviewLabel);
             Controls.Add(backButton);

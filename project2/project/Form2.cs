@@ -10,6 +10,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace project
 {
@@ -69,6 +70,7 @@ namespace project
 
         private void addFoodButton_Click(object sender, EventArgs e)
         {
+            //Order.AddFood();
             string selectedFood = orderCombobox.SelectedIndex.ToString();
             int selectedFoodIndex = int.Parse(selectedFood);
             orderReviewCombobox.Items.Add(Food.foods[selectedFoodIndex].name);
@@ -81,13 +83,13 @@ namespace project
 
         private void removeFoodButton_Click(object sender, EventArgs e)
         {
+            //Order.RemoveFood();
             string removedFood = orderCombobox.SelectedIndex.ToString();
             int removedFoodIndex = int.Parse(removedFood);
             if (orderReviewCombobox.Items.Contains(Food.foods[removedFoodIndex].name))
             {
                 orderReviewCombobox.Items.Remove(Food.foods[removedFoodIndex].name);
             }
-
         }
     }
 }

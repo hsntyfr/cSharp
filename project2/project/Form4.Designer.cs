@@ -43,7 +43,8 @@
             // foodLabel
             // 
             foodLabel.AutoSize = true;
-            foodLabel.Location = new Point(649, 31);
+            foodLabel.BackColor = Color.Gray;
+            foodLabel.Location = new Point(460, 115);
             foodLabel.Name = "foodLabel";
             foodLabel.Size = new Size(112, 75);
             foodLabel.TabIndex = 3;
@@ -51,93 +52,101 @@
             // 
             // menuTextbox
             // 
-            menuTextbox.Location = new Point(141, 31);
+            menuTextbox.Location = new Point(125, 45);
             menuTextbox.Name = "menuTextbox";
-            menuTextbox.Size = new Size(413, 23);
+            menuTextbox.Size = new Size(575, 23);
             menuTextbox.TabIndex = 4;
             // 
             // foodCombobox
             // 
             foodCombobox.FormattingEnabled = true;
-            foodCombobox.Location = new Point(173, 109);
+            foodCombobox.Location = new Point(245, 115);
             foodCombobox.Name = "foodCombobox";
             foodCombobox.Size = new Size(121, 23);
             foodCombobox.TabIndex = 6;
             // 
             // foodAddButton
             // 
-            foodAddButton.Location = new Point(390, 109);
+            foodAddButton.BackColor = Color.SkyBlue;
+            foodAddButton.Location = new Point(386, 345);
             foodAddButton.Name = "foodAddButton";
             foodAddButton.Size = new Size(75, 23);
             foodAddButton.TabIndex = 7;
             foodAddButton.Text = "Add";
-            foodAddButton.UseVisualStyleBackColor = true;
+            foodAddButton.UseVisualStyleBackColor = false;
             foodAddButton.Click += foodAddButton_Click;
             // 
             // showButton
             // 
-            showButton.Location = new Point(390, 165);
+            showButton.BackColor = Color.Aqua;
+            showButton.Location = new Point(386, 297);
             showButton.Name = "showButton";
             showButton.Size = new Size(75, 23);
             showButton.TabIndex = 8;
             showButton.Text = "Show";
-            showButton.UseVisualStyleBackColor = true;
+            showButton.UseVisualStyleBackColor = false;
             showButton.Click += showButton_Click;
             // 
             // editFoodButton
             // 
-            editFoodButton.Location = new Point(390, 226);
+            editFoodButton.BackColor = Color.LightBlue;
+            editFoodButton.Location = new Point(525, 297);
             editFoodButton.Name = "editFoodButton";
             editFoodButton.Size = new Size(75, 23);
             editFoodButton.TabIndex = 9;
             editFoodButton.Text = "Edit";
-            editFoodButton.UseVisualStyleBackColor = true;
+            editFoodButton.UseVisualStyleBackColor = false;
             editFoodButton.Click += editFoodButton_Click;
             // 
             // saveFoodButton
             // 
-            saveFoodButton.Location = new Point(506, 108);
+            saveFoodButton.BackColor = Color.DeepSkyBlue;
+            saveFoodButton.Location = new Point(525, 345);
             saveFoodButton.Name = "saveFoodButton";
             saveFoodButton.Size = new Size(75, 23);
             saveFoodButton.TabIndex = 10;
             saveFoodButton.Text = "Save";
-            saveFoodButton.UseVisualStyleBackColor = true;
+            saveFoodButton.UseVisualStyleBackColor = false;
             saveFoodButton.Click += saveFoodButton_Click;
             // 
             // deleteFoodButton
             // 
-            deleteFoodButton.Location = new Point(506, 165);
+            deleteFoodButton.BackColor = Color.OrangeRed;
+            deleteFoodButton.Location = new Point(245, 345);
             deleteFoodButton.Name = "deleteFoodButton";
             deleteFoodButton.Size = new Size(75, 23);
             deleteFoodButton.TabIndex = 11;
             deleteFoodButton.Text = "Delete";
-            deleteFoodButton.UseVisualStyleBackColor = true;
+            deleteFoodButton.UseVisualStyleBackColor = false;
             deleteFoodButton.Click += deleteFoodButton_Click;
             // 
             // homeButton
             // 
-            homeButton.Location = new Point(506, 226);
+            homeButton.BackColor = Color.GreenYellow;
+            homeButton.Location = new Point(680, 390);
             homeButton.Name = "homeButton";
             homeButton.Size = new Size(75, 23);
             homeButton.TabIndex = 12;
             homeButton.Text = "Home";
-            homeButton.UseVisualStyleBackColor = true;
+            homeButton.UseVisualStyleBackColor = false;
             homeButton.Click += homeButton_Click;
             // 
             // clearButton
             // 
-            clearButton.Location = new Point(506, 69);
+            clearButton.BackColor = SystemColors.ControlDark;
+            clearButton.Location = new Point(245, 297);
             clearButton.Name = "clearButton";
             clearButton.Size = new Size(75, 23);
             clearButton.TabIndex = 13;
             clearButton.Text = "Clear";
-            clearButton.UseVisualStyleBackColor = true;
+            clearButton.UseVisualStyleBackColor = false;
             clearButton.Click += clearButton_Click;
             // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SteelBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(clearButton);
             Controls.Add(homeButton);

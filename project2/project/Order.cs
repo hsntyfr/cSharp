@@ -6,19 +6,33 @@ using System.Threading.Tasks;
 
 namespace project
 {
-    internal static class Order
+    internal class Order
     {
         public static void AddFood()
         {
-            //yemeği labele ekleme
+            Form2 form2 = new Form2();
+            string selectedFood = form2.orderCombobox.SelectedIndex.ToString();
+            int selectedFoodIndex = int.Parse(selectedFood);
+            form2.orderReviewCombobox.Items.Add(Food.foods[selectedFoodIndex].name);
+            //orderLabel.Text += "\r" + Food.foods[selectedFoodIndex].name;
+            //if (!orderReviewCombobox.Items.Contains(Food.foods[selectedFoodIndex].name))
+            //{
+            //    orderReviewCombobox.Items.Add(Food.foods[selectedFoodIndex].name);
+            //}
         }
         public static void RemoveFood()
         {
-            //yemeği labelden silme
+            Form2 form2 = new Form2();
+            string removedFood = form2.orderCombobox.SelectedIndex.ToString();
+            int removedFoodIndex = int.Parse(removedFood);
+            if (form2.orderReviewCombobox.Items.Contains(Food.foods[removedFoodIndex].name))
+            {
+                form2.orderReviewCombobox.Items.Remove(Food.foods[removedFoodIndex].name);
+            }
         }
         public static void FicheOrder()
         {
-            //eklenen yemekleri yeni bi pencerede yazsın ve hesap görünsün
+
         }
     }
 }

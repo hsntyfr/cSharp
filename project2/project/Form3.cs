@@ -52,7 +52,14 @@ namespace project
                 float stock = float.Parse(data[3]);
                 float price = float.Parse(data[4]);
                 Material material = new Material(name, productionDate, expirationDate, stock, price);
-                Material.materials.Add(material);
+                if (Material.materials.Contains(material))
+                {
+                    materialLabel.Text = "Material wanted add is already exist";
+                }
+                else
+                {
+                    Material.materials.Add(material);
+                }
                 materialCombobox.Items.Add(material.name);
                 materialTextBox.Text = string.Empty;
                 Material.Write(Material.materials, "C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
@@ -94,9 +101,8 @@ namespace project
             foreach (Material material in Material.materials)
             {
                 Material.Write(Material.materials, "C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt");
-                //File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
-                //File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
-                //bitişte akfitfleştir
+                File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
+                File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
             }
         }
 
@@ -111,19 +117,19 @@ namespace project
                 {
                     newMaterials.Add(material);
                     Material.Write(newMaterials, "C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt");
-                    //File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
-                    //File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
-                    //bitişte akfitfleştir
+                    File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
+                    File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
                 }
             }
-            //Material.materials[selectedMaterialIndex] = null;
-            //Material.Write(Material.materials, "C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt");
-            //string[] edittedMaterialText = materialTextBox.Text.Split(",");
-            //Material.materials[selectedMaterialIndex].name = edittedMaterialText[0];
-            //Material.materials[selectedMaterialIndex].productionDate = DateTime.Parse(edittedMaterialText[1]);
-            //Material.materials[selectedMaterialIndex].expirationDate = DateTime.Parse(edittedMaterialText[2]);
-            //Material.materials[selectedMaterialIndex].stock = float.Parse(edittedMaterialText[3]);
-            //Material.materials[selectedMaterialIndex].price = float.Parse(edittedMaterialText[4]);
+            
+            Material.materials.Clear();
+            materialCombobox.Items.Clear();
+            Material.materials = Material.ReadMaterial("C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
+
+            foreach (Material material in Material.materials)
+            {
+                this.materialCombobox.Items.Add(material.name);
+            }
             materialLabel.Text = "Material is deleted";
         }
 

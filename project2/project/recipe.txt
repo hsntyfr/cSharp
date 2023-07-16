@@ -1,4 +1,20 @@
-4,yemek,a,15,b,15,c,15,c,15
-4,aaaaak,a,15,b,15,c,15,c,15
-4,mmmmmmmmmmm,a,15,b,15,c,15,c,15
-4,qqq,a,15,b,15,c,15,c,15
+2,Meatball,meat,150,pepper,50,onion,75,bread,50
+2,Chicken Meatball,chicken,150,pepper,50,onion,75,bread,50
+2,Onion Soup,cream,150,pepper,50,onion,75,bread,50
+4,Pudding,cacao,50,milk,150,vanilla,15,nut,50
+3,Humus,legumes,250,pepper,50,onion,75,oil,10
+2,Hamburger,meal,150,pepper,50,onion,75,mustard,2
+4,Chesscake,cream,150,milk,150,cheese,100,vanilla,10
+1,Cheese Salad,cheese,100,lettuce,250,tomato,100,oil,50
+3,French Fries,potato,300,ketchtup,70,mayonnaise,70,salt,5
+1,Nut Salad,nut,50,tomato,150,lettuce,205,cucumber,150
+2,Rice,rice,100,oil,50,salt,5,ginger,5
+4,Rice Pudding,rice,50,milk,150,vanilla,15,nut,50
+4,Eggplant,eggplant,150,meat,75,pepper,15,salt,5
+3,Pasta,cheese,100,pasta,100,tomato,100,oil,50
+4,Baklava,nut,100,flour,50,sugar,100,oil,50
+2,Artichoke,artichoke,100,lemon,20,tomato,100,oil,50
+3,Spinach,spinach,100,salt,5,egg,1,oil,50
+1,Lasagna,cheese,100,pasta,150,meat,100,oil,50
+2,Cordon Bleu,cheese,100,chicken,350,salt,10,oil,50
+3,Piyaz,legumes,100,lemon,50,tomato,100,oil,50
