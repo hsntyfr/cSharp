@@ -19,3 +19,4 @@ C:\Users\Hasan\source\repos\project\project\obj\Debug\net6.0-windows\project.For
 C:\Users\Hasan\source\repos\project\project\obj\Debug\net6.0-windows\project.Form3.resources
 C:\Users\Hasan\source\repos\project\project\obj\Debug\net6.0-windows\project.Form4.resources
 C:\Users\Hasan\source\repos\project\project\obj\Debug\net6.0-windows\project.Form5.resources
+C:\Users\Hasan\source\repos\project\project\obj\Debug\net6.0-windows\project.Form6.resources

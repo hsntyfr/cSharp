@@ -39,6 +39,7 @@ namespace project
 
         private void backButton_Click(object sender, EventArgs e)
         {
+            //buralar silinecek
             Form2 form2 = new Form2();
             foreach (Food food in Delivery.deliveryCheck)
             {

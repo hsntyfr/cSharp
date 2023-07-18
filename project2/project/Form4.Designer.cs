@@ -38,6 +38,8 @@
             deleteFoodButton = new Button();
             homeButton = new Button();
             clearButton = new Button();
+            foodReportCombobox = new ComboBox();
+            getReportButton = new Button();
             SuspendLayout();
             // 
             // foodLabel
@@ -68,7 +70,7 @@
             // foodAddButton
             // 
             foodAddButton.BackColor = Color.SkyBlue;
-            foodAddButton.Location = new Point(386, 345);
+            foodAddButton.Location = new Point(358, 281);
             foodAddButton.Name = "foodAddButton";
             foodAddButton.Size = new Size(75, 23);
             foodAddButton.TabIndex = 7;
@@ -79,7 +81,7 @@
             // showButton
             // 
             showButton.BackColor = Color.Aqua;
-            showButton.Location = new Point(386, 297);
+            showButton.Location = new Point(358, 233);
             showButton.Name = "showButton";
             showButton.Size = new Size(75, 23);
             showButton.TabIndex = 8;
@@ -90,7 +92,7 @@
             // editFoodButton
             // 
             editFoodButton.BackColor = Color.LightBlue;
-            editFoodButton.Location = new Point(525, 297);
+            editFoodButton.Location = new Point(497, 233);
             editFoodButton.Name = "editFoodButton";
             editFoodButton.Size = new Size(75, 23);
             editFoodButton.TabIndex = 9;
@@ -101,7 +103,7 @@
             // saveFoodButton
             // 
             saveFoodButton.BackColor = Color.DeepSkyBlue;
-            saveFoodButton.Location = new Point(525, 345);
+            saveFoodButton.Location = new Point(497, 281);
             saveFoodButton.Name = "saveFoodButton";
             saveFoodButton.Size = new Size(75, 23);
             saveFoodButton.TabIndex = 10;
@@ -112,7 +114,7 @@
             // deleteFoodButton
             // 
             deleteFoodButton.BackColor = Color.OrangeRed;
-            deleteFoodButton.Location = new Point(245, 345);
+            deleteFoodButton.Location = new Point(217, 281);
             deleteFoodButton.Name = "deleteFoodButton";
             deleteFoodButton.Size = new Size(75, 23);
             deleteFoodButton.TabIndex = 11;
@@ -134,7 +136,7 @@
             // clearButton
             // 
             clearButton.BackColor = SystemColors.ControlDark;
-            clearButton.Location = new Point(245, 297);
+            clearButton.Location = new Point(217, 233);
             clearButton.Name = "clearButton";
             clearButton.Size = new Size(75, 23);
             clearButton.TabIndex = 13;
@@ -142,12 +144,34 @@
             clearButton.UseVisualStyleBackColor = false;
             clearButton.Click += clearButton_Click;
             // 
+            // foodReportCombobox
+            // 
+            foodReportCombobox.FormattingEnabled = true;
+            foodReportCombobox.Items.AddRange(new object[] { "Price low to high", "Price high to low", "Tax low to high", "Tax high to low" });
+            foodReportCombobox.Location = new Point(265, 353);
+            foodReportCombobox.Name = "foodReportCombobox";
+            foodReportCombobox.Size = new Size(121, 23);
+            foodReportCombobox.TabIndex = 14;
+            // 
+            // getReportButton
+            // 
+            getReportButton.BackColor = Color.Silver;
+            getReportButton.Location = new Point(432, 353);
+            getReportButton.Name = "getReportButton";
+            getReportButton.Size = new Size(75, 23);
+            getReportButton.TabIndex = 15;
+            getReportButton.Text = "Get Report";
+            getReportButton.UseVisualStyleBackColor = false;
+            getReportButton.Click += getReportButton_Click;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(getReportButton);
+            Controls.Add(foodReportCombobox);
             Controls.Add(clearButton);
             Controls.Add(homeButton);
             Controls.Add(deleteFoodButton);
@@ -177,5 +201,7 @@
         private Button deleteFoodButton;
         private Button homeButton;
         private Button clearButton;
+        private ComboBox foodReportCombobox;
+        private Button getReportButton;
     }
 }

@@ -61,6 +61,62 @@ namespace project
 
             return materials;
         }
+        public static void StockLowToHighMaterial()
+        {
+            Form6 form6 = new Form6();
+            List<Material> sortedMaterials = new List<Material>();
+            sortedMaterials = materials.OrderBy(x =>  x.stock).ToList();
+            form6.reportRichTextbox.Text = $"{"Name", -10}{"Stock", 20}\r";
+
+            foreach (Material material in sortedMaterials)
+            {
+                string sortedList = string.Format($"{material.name, -10}{material.stock, 20}\r");
+                form6.reportRichTextbox.Text += sortedList;
+            }
+            form6.Show();
+        }
+        public static void StockHighToLowMaterial()
+        {
+            Form6 form6 = new Form6();
+            List<Material> sortedMaterials = new List<Material>();
+            sortedMaterials = materials.OrderByDescending(x => x.stock).ToList();
+            form6.reportRichTextbox.Text = $"{"Name",-10}{"Stock",20}\r";
+
+            foreach (Material material in sortedMaterials)
+            {
+                string sortedList = string.Format($"{material.name,-10}{material.stock,20}\r");
+                form6.reportRichTextbox.Text += sortedList;
+            }
+            form6.Show();
+        }
+        public static void OldestMaterial()
+        {
+            Form6 form6 = new Form6();
+            List<Material> sortedMaterials = new List<Material>();
+            sortedMaterials = materials.OrderBy(x => x.productionDate).ToList();
+            form6.reportRichTextbox.Text = $"{"Name",-10}{"Production Date",20}\r";
+
+            foreach (Material material in sortedMaterials)
+            {
+                string sortedList = string.Format($"{material.name,-10}{material.productionDate,20}\r");
+                form6.reportRichTextbox.Text += sortedList;
+            }
+            form6.Show();
+        }
+        public static void NewestMaterial()
+        {
+            Form6 form6 = new Form6();
+            List<Material> sortedMaterials = new List<Material>();
+            sortedMaterials = materials.OrderByDescending(x => x.productionDate).ToList();
+            form6.reportRichTextbox.Text = $"{"Name",-10}{"Stock",20}\r";
+
+            foreach (Material material in sortedMaterials)
+            {
+                string sortedList = string.Format($"{material.name,-10}{material.productionDate,20}\r");
+                form6.reportRichTextbox.Text += sortedList;
+            }
+            form6.Show();
+        }
 
         //public static void LoadMaterials(List<Material> materials)
         //{

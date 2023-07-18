@@ -35,29 +35,30 @@ namespace project
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            Form5 form5 = new Form5();
-            foreach (string food in this.orderReviewCombobox.Items)
-            {
-                foreach (Food foodCompare in Food.foods)
-                {
-                    if (food == foodCompare.name)
-                    {
-                        Delivery.deliveryCheck.Add(foodCompare);
-                    }
-                }
-            }
-            string foodLabel = "Food";
-            string priceLabel = "Price";
-            string titleReview = String.Format("{0,-40} {1,-20}\r", foodLabel, priceLabel);
-            form5.orderReviewLabel.Text = titleReview;
+            Order.FicheOrder();
+            //Form5 form5 = new Form5();
+            //foreach (string food in this.orderReviewCombobox.Items)
+            //{
+            //    foreach (Food foodCompare in Food.foods)
+            //    {
+            //        if (food == foodCompare.name)
+            //        {
+            //            Delivery.deliveryCheck.Add(foodCompare);
+            //        }
+            //    }
+            //}
+            //string foodLabel = "Food";
+            //string priceLabel = "Price";
+            //string titleReview = String.Format("{0,-40} {1,-20}\r", foodLabel, priceLabel);
+            //form5.orderReviewLabel.Text = titleReview;
 
-            foreach (Food food in Delivery.deliveryCheck)
-            {
-                string foodReview = String.Format("{0,-40} {1,-20}\r", food.name, food.price);
-                form5.orderReviewLabel.Text += foodReview;
-            }
-            form5.Show();
-            this.Hide();
+            //foreach (Food food in Delivery.deliveryCheck)
+            //{
+            //    string foodReview = String.Format("{0,-40} {1,-20}\r", food.name, food.price);
+            //    form5.orderReviewLabel.Text += foodReview;
+            //}
+            //form5.Show();
+            //this.Hide();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -65,31 +66,19 @@ namespace project
             foreach (Food food in Food.foods)
             {
                 this.orderCombobox.Items.Add(food.name);
+                Order.order.Add(food, 0);
             }
+            
         }
 
         private void addFoodButton_Click(object sender, EventArgs e)
         {
-            //Order.AddFood();
-            string selectedFood = orderCombobox.SelectedIndex.ToString();
-            int selectedFoodIndex = int.Parse(selectedFood);
-            orderReviewCombobox.Items.Add(Food.foods[selectedFoodIndex].name);
-            //orderLabel.Text += "\r" + Food.foods[selectedFoodIndex].name;
-            //if (!orderReviewCombobox.Items.Contains(Food.foods[selectedFoodIndex].name))
-            //{
-            //    orderReviewCombobox.Items.Add(Food.foods[selectedFoodIndex].name);
-            //}
+            orderReviewCombobox.Items.Add(Order.AddFood(orderCombobox.SelectedIndex.ToString()).name);
         }
 
         private void removeFoodButton_Click(object sender, EventArgs e)
         {
-            //Order.RemoveFood();
-            string removedFood = orderCombobox.SelectedIndex.ToString();
-            int removedFoodIndex = int.Parse(removedFood);
-            if (orderReviewCombobox.Items.Contains(Food.foods[removedFoodIndex].name))
-            {
-                orderReviewCombobox.Items.Remove(Food.foods[removedFoodIndex].name);
-            }
+            orderReviewCombobox.Items.Remove(Order.RemoveFood(orderCombobox.SelectedIndex.ToString()).name);
         }
     }
 }

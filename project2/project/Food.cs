@@ -96,7 +96,63 @@ namespace project
 
             return foods;
         }
-        
+        public static void PriceLowToHigh()
+        {
+            Form6 form6 = new Form6();
+            List<Food> sortedFoods = new List<Food>();
+            sortedFoods = foods.OrderBy(x => x.price).ToList();
+            form6.reportRichTextbox.Text = $"{"Name",-10}{"Price",20}\r";
+
+            foreach (Food food in sortedFoods)
+            {
+                string sortedList = string.Format($"{food.name,-10}{food.price,20}\r");
+                form6.reportRichTextbox.Text += sortedList;
+            }
+            form6.Show();
+        }
+        public static void PriceHighToLow()
+        {
+            Form6 form6 = new Form6();
+            List<Food> sortedFoods = new List<Food>();
+            sortedFoods = foods.OrderByDescending(x => x.price).ToList();
+            form6.reportRichTextbox.Text = $"{"Name",-10}{"Price",20}\r";
+
+            foreach (Food food in sortedFoods)
+            {
+                string sortedList = string.Format($"{food.name,-10}{food.price,20}\r");
+                form6.reportRichTextbox.Text += sortedList;
+            }
+            form6.Show();
+        }
+        public static void TaxHighToLow()
+        {
+            Form6 form6 = new Form6();
+            List<Food> sortedFoods = new List<Food>();
+            sortedFoods = foods.OrderByDescending(x => x.price).ToList();
+            form6.reportRichTextbox.Text = $"{"Name",-10}{"Tax",20}\r";
+
+            foreach (Food food in sortedFoods)
+            {
+                string sortedList = string.Format($"{food.name,-10}{food.tax,20}\r");
+                form6.reportRichTextbox.Text += sortedList;
+            }
+            form6.Show();
+        }
+        public static void TaxLowToHigh()
+        {
+            Form6 form6 = new Form6();
+            List<Food> sortedFoods = new List<Food>();
+            sortedFoods = foods.OrderByDescending(x => x.price).ToList();
+            form6.reportRichTextbox.Text = $"{"Name",-10}{"Tax",20}\r";
+
+            foreach (Food food in sortedFoods)
+            {
+                string sortedList = string.Format($"{food.name,-10}{food.tax,20}\r");
+                form6.reportRichTextbox.Text += sortedList;
+            }
+            form6.Show();
+        }
+
 
     }
     public class Salad : Food

@@ -38,6 +38,8 @@
             deleteMaterialButton = new Button();
             homeButton = new Button();
             clearButton = new Button();
+            repoReportCombobox = new ComboBox();
+            repoReportButton = new Button();
             SuspendLayout();
             // 
             // materialCombobox
@@ -59,7 +61,7 @@
             // materialAddButton
             // 
             materialAddButton.BackColor = Color.SkyBlue;
-            materialAddButton.Location = new Point(385, 343);
+            materialAddButton.Location = new Point(388, 275);
             materialAddButton.Name = "materialAddButton";
             materialAddButton.Size = new Size(75, 23);
             materialAddButton.TabIndex = 2;
@@ -80,7 +82,7 @@
             // showButton
             // 
             showButton.BackColor = Color.Aqua;
-            showButton.Location = new Point(385, 295);
+            showButton.Location = new Point(388, 227);
             showButton.Name = "showButton";
             showButton.Size = new Size(75, 23);
             showButton.TabIndex = 4;
@@ -91,7 +93,7 @@
             // materialEditButton
             // 
             materialEditButton.BackColor = Color.LightBlue;
-            materialEditButton.Location = new Point(513, 296);
+            materialEditButton.Location = new Point(516, 228);
             materialEditButton.Name = "materialEditButton";
             materialEditButton.Size = new Size(75, 23);
             materialEditButton.TabIndex = 5;
@@ -102,7 +104,7 @@
             // saveMaterialButton
             // 
             saveMaterialButton.BackColor = Color.DeepSkyBlue;
-            saveMaterialButton.Location = new Point(513, 343);
+            saveMaterialButton.Location = new Point(516, 275);
             saveMaterialButton.Name = "saveMaterialButton";
             saveMaterialButton.Size = new Size(75, 23);
             saveMaterialButton.TabIndex = 6;
@@ -113,7 +115,7 @@
             // deleteMaterialButton
             // 
             deleteMaterialButton.BackColor = Color.OrangeRed;
-            deleteMaterialButton.Location = new Point(245, 343);
+            deleteMaterialButton.Location = new Point(248, 275);
             deleteMaterialButton.Name = "deleteMaterialButton";
             deleteMaterialButton.Size = new Size(75, 23);
             deleteMaterialButton.TabIndex = 7;
@@ -135,7 +137,7 @@
             // clearButton
             // 
             clearButton.BackColor = SystemColors.ControlDark;
-            clearButton.Location = new Point(245, 295);
+            clearButton.Location = new Point(248, 227);
             clearButton.Name = "clearButton";
             clearButton.Size = new Size(75, 23);
             clearButton.TabIndex = 9;
@@ -143,12 +145,35 @@
             clearButton.UseVisualStyleBackColor = false;
             clearButton.Click += clearButton_Click;
             // 
+            // repoReportCombobox
+            // 
+            repoReportCombobox.FormattingEnabled = true;
+            repoReportCombobox.Items.AddRange(new object[] { "Stock low to high", "Stock high to low", "The oldest materials", "The newest materials" });
+            repoReportCombobox.Location = new Point(294, 340);
+            repoReportCombobox.Name = "repoReportCombobox";
+            repoReportCombobox.Size = new Size(121, 23);
+            repoReportCombobox.TabIndex = 10;
+            repoReportCombobox.SelectedIndexChanged += repoReportCombobox_SelectedIndexChanged;
+            // 
+            // repoReportButton
+            // 
+            repoReportButton.BackColor = Color.Silver;
+            repoReportButton.Location = new Point(460, 340);
+            repoReportButton.Name = "repoReportButton";
+            repoReportButton.Size = new Size(75, 23);
+            repoReportButton.TabIndex = 11;
+            repoReportButton.Text = "Get Report";
+            repoReportButton.UseVisualStyleBackColor = false;
+            repoReportButton.Click += repoReportButton_Click;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(repoReportButton);
+            Controls.Add(repoReportCombobox);
             Controls.Add(clearButton);
             Controls.Add(homeButton);
             Controls.Add(deleteMaterialButton);
@@ -172,12 +197,14 @@
         public ComboBox materialCombobox;
         public TextBox materialTextBox;
         public Button materialAddButton;
-        private Label materialLabel;
         private Button showButton;
         private Button materialEditButton;
         private Button saveMaterialButton;
         private Button deleteMaterialButton;
         private Button homeButton;
         private Button clearButton;
+        private Button repoReportButton;
+        public ComboBox repoReportCombobox;
+        public Label materialLabel;
     }
 }

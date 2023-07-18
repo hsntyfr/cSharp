@@ -150,5 +150,31 @@ namespace project
             foodLabel.Text = "Food is not selected\r\n1-Salad\r\n2-Meal\r\n3-Snack\r\n4-Desert\r\n";
             menuTextbox.Text = string.Empty;
         }
+
+        private void getReportButton_Click(object sender, EventArgs e)
+        {
+            switch (foodReportCombobox.SelectedIndex)
+            {
+                case -1:
+                    foodLabel.Text = "Please select any case";
+                    break;
+
+                case 0:
+                    Food.PriceLowToHigh();
+                    break;
+
+                case 1:
+                    Food.PriceHighToLow();
+                    break;
+
+                case 2:
+                    Food.TaxLowToHigh();
+                    break;
+
+                case 3:
+                    Food.TaxHighToLow();
+                    break;
+            }
+        }
     }
 }

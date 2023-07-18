@@ -121,7 +121,7 @@ namespace project
                     File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
                 }
             }
-            
+
             Material.materials.Clear();
             materialCombobox.Items.Clear();
             Material.materials = Material.ReadMaterial("C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
@@ -144,6 +144,38 @@ namespace project
         {
             materialLabel.Text = string.Empty;
             materialTextBox.Text = string.Empty;
+        }
+
+        private void repoReportButton_Click(object sender, EventArgs e)
+        {
+
+            switch (repoReportCombobox.SelectedIndex)
+            {
+                case -1:
+                    materialLabel.Text = "Please select any case";
+                    break;
+
+                case 0:
+                    Material.StockLowToHighMaterial();
+                    break;
+
+                case 1:
+                    Material.StockHighToLowMaterial();
+                    break;
+
+                case 2:
+                    Material.OldestMaterial();
+                    break;
+
+                case 3:
+                    Material.NewestMaterial();
+                    break;
+            }
+        }
+
+        private void repoReportCombobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
