@@ -46,7 +46,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(reportRichTextbox);
             Name = "Form6";
-            Text = "Form6";
+            Text = "Report";
             FormClosing += Form6_FormClosing;
             Load += Form6_Load;
             ResumeLayout(false);

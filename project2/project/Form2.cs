@@ -58,15 +58,13 @@ namespace project
             //    form5.orderReviewLabel.Text += foodReview;
             //}
             //form5.Show();
-            //this.Hide();
+            this.Hide();
         }
-
         private void Form2_Load(object sender, EventArgs e)
         {
             foreach (Food food in Food.foods)
             {
                 this.orderCombobox.Items.Add(food.name);
-                Order.order.Add(food, 0);
             }
             
         }

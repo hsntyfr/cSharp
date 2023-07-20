@@ -10,6 +10,7 @@ namespace project
     {
         public static List<Food> foods = new List<Food>();
         public static List<Food> recipes = new List<Food>();
+        public static Dictionary<Food, int> foodCapacity = new Dictionary<Food, int>();
 
         public int kind { get; set; }
         public string name { get; set; }
@@ -151,6 +152,85 @@ namespace project
                 form6.reportRichTextbox.Text += sortedList;
             }
             form6.Show();
+        }
+        public static void DailyFoodList()
+        {
+            foreach (KeyValuePair<Food, int> food in Food.foodCapacity)
+            {
+                if (food.Value > 0)
+                {
+                    foreach (Material material1Repo in Material.materials)
+                    {
+                        if (food.Key.material1 == material1Repo.name)
+                        {
+                            float usedMaterial = food.Key.material1Amount * food.Value;
+                            if (material1Repo.stock >= usedMaterial)
+                            {
+                                material1Repo.stock -= usedMaterial;
+                            }
+                            else
+                            {
+                                Material.materialShopList[material1Repo] = -(material1Repo.stock -= usedMaterial);
+                            }
+
+                        }
+                    }
+                    foreach (Material material2Repo in Material.materials)
+                    {
+                        if (food.Key.material2 == material2Repo.name)
+                        {
+                            float usedMaterial = food.Key.material2Amount * food.Value;
+                            if (material2Repo.stock >= usedMaterial)
+                            {
+                                material2Repo.stock -= usedMaterial;
+                            }
+                            else
+                            {
+                                Material.materialShopList[material2Repo] = -(material2Repo.stock -= usedMaterial);
+                            }
+
+                        }
+                    }
+                    foreach (Material material3Repo in Material.materials)
+                    {
+                        if (food.Key.material3 == material3Repo.name)
+                        {
+                            float usedMaterial = food.Key.material3Amount * food.Value;
+                            if (material3Repo.stock >= usedMaterial)
+                            {
+                                material3Repo.stock -= usedMaterial;
+                            }
+                            else
+                            {
+                                Material.materialShopList[material3Repo] = -(material3Repo.stock -= usedMaterial);
+                            }
+
+                        }
+                    }
+                    foreach (Material material4Repo in Material.materials)
+                    {
+                        if (food.Key.material4 == material4Repo.name)
+                        {
+                            float usedMaterial = food.Key.material4Amount * food.Value;
+                            if (material4Repo.stock >= usedMaterial)
+                            {
+                                material4Repo.stock -= usedMaterial;
+                            }
+                            else
+                            {
+                                Material.materialShopList[material4Repo] = -(material4Repo.stock -= usedMaterial);
+                            }
+
+                        }
+                    }
+
+                }
+            }
+            Material.Write(Material.materials, "C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt");
+            File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
+            File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\list2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
+            File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\shopList.txt");
+            Material.WriteShopList(Material.materialShopList, "C:\\Users\\Hasan\\source\\repos\\project\\project\\shopList.txt");
         }
 
 

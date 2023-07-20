@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Collections;
 
 namespace project
 {
     public class Material
     {
+        public static Dictionary<Material, float> materialShopList = new Dictionary<Material, float>();
         public static List<Material> materials = new List<Material>();
         public string name { get; set; }
         public DateTime productionDate { get; set; }
@@ -116,6 +118,17 @@ namespace project
                 form6.reportRichTextbox.Text += sortedList;
             }
             form6.Show();
+        }
+        public static void WriteShopList(Dictionary<Material, float> shopList, string filePath)
+        {
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                foreach (KeyValuePair<Material, float> materialShopList in shopList)
+                {
+                    string line = $"{materialShopList.Key.name},{materialShopList.Value}";
+                    writer.WriteLine(line);
+                }
+            }
         }
 
         //public static void LoadMaterials(List<Material> materials)

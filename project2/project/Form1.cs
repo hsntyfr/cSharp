@@ -18,6 +18,11 @@ namespace project
         {
             Material.materials = Material.ReadMaterial("C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
             Food.foods = Food.ReadFood("C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
+            foreach (Food food in Food.foods)
+            {
+                Order.order.Add(food, 0);
+                Food.foodCapacity.Add(food, 0);
+            }
 
 
 

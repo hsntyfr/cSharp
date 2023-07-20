@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
@@ -100,11 +104,10 @@ namespace project
             {
                 Food.WriteFood(Food.foods, "C:\\Users\\Hasan\\source\\repos\\project\\project\\food2.txt");
                 Food.WriteRecipe(Food.foods, "C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt");
-                //File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
-                //File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\food2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
-                //File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
-                //File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
-                //bitişte akfitfleştir
+                File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
+                File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\food2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
+                File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
+                File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
             }
         }
 
@@ -176,5 +179,36 @@ namespace project
                     break;
             }
         }
+
+        private void setDailyFoodButton_Click(object sender, EventArgs e)
+        {
+            string selectedFood = foodCombobox.SelectedIndex.ToString();
+            int selectedFoodIndex = int.Parse(selectedFood);
+            string selectedFoodName = Food.foods[selectedFoodIndex].name;
+            foreach (KeyValuePair<Food, int> settedFood in Food.foodCapacity)
+            {
+                if (settedFood.Key.name == selectedFoodName)
+                {
+                    menuTextbox.Text = $"{settedFood.Key.name},{settedFood.Value}";
+
+                }
+            }
+        }
+
+        private void saveDailyFoodButton_Click(object sender, EventArgs e)
+        {
+            string[] settedFood = menuTextbox.Text.Split(',');
+            string selectedFood = foodCombobox.SelectedIndex.ToString();
+            int selectedFoodIndex = int.Parse(selectedFood);
+            Food.foodCapacity[Food.foods[selectedFoodIndex]] = int.Parse(settedFood[1]);
+            foodLabel.Text = "Capacity is changed";
+        }
+
+        private void finalDailyFoodButton_Click(object sender, EventArgs e)
+        {
+            Food.DailyFoodList();
+            foodLabel.Text = "Shop list created";
+        }
+        
     }
 }

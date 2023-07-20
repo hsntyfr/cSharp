@@ -39,16 +39,27 @@ namespace project
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            //buralar silinecek
             Form2 form2 = new Form2();
-            foreach (Food food in Delivery.deliveryCheck)
+            foreach (KeyValuePair<Food, int> food in Order.order)
             {
-                form2.orderReviewCombobox.Items.Add(food.name);
+                Food key = food.Key;
+                int value = food.Value;
+                if (food.Value > 0)
+                {
+                    for (int i = 0; i < food.Value; i++)
+                    {
+                        form2.orderReviewCombobox.Items.Add(food.Key.name);
+
+                    }
+                }
             }
-            Delivery.deliveryCheck.Clear();
+            //foreach (Food food in Delivery.deliveryCheck)
+            //{
+            //    form2.orderReviewCombobox.Items.Add(food.name);
+            //}
+            //Delivery.deliveryCheck.Clear();
             form2.Show();
             this.Close();
-
         }
     }
 }
