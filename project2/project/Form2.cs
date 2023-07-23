@@ -66,7 +66,6 @@ namespace project
             {
                 this.orderCombobox.Items.Add(food.name);
             }
-            
         }
 
         private void addFoodButton_Click(object sender, EventArgs e)

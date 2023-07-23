@@ -26,5 +26,10 @@ namespace project
         {
             this.Hide();
         }
+
+        private void reportRichTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

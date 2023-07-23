@@ -15,7 +15,14 @@ namespace project
             Form2 form2 = new Form2();
             string selectedFood = foodName;
             int selectedFoodIndex = int.Parse(selectedFood);
-            order[Food.foods[selectedFoodIndex]] += 1;
+            if (Food.foodCapacity.ElementAt(selectedFoodIndex).Value > 0) 
+            {
+                order[Food.foods[selectedFoodIndex]] += 1;
+            }
+            else
+            {
+                form2.orderLabel.Text = "This food is not added cause not exist enough daily capacity";
+            }
             return Food.foods[selectedFoodIndex];
         }
         public static Food RemoveFood(string foodName)

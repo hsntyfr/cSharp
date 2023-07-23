@@ -1,20 +1,20 @@
-2,Meatball,70,10,meat,150,pepper,50,onion,75,bread,50
-2,Chicken Meatball,50,8,chicken,150,pepper,50,onion,75,bread,50
-2,Onion Soup,30,1,cream,150,pepper,50,onion,75,bread,50
+2,Meatball,100,10,meat,150,pepper,50,onion,75,bread,30
+2,Chicken Meatball,70,8,chicken,150,pepper,50,onion,75,bread,30
+2,Onion Soup,45,1,cream,150,pepper,30,onion,100,bread,20
 4,Pudding,60,12,cacao,50,milk,150,vanilla,15,nut,50
-3,Humus,50,18,legumes,250,pepper,50,onion,75,oil,10
+3,Humus,80,18,legumes,250,pepper,20,onion,45,oil,25
 2,Hamburger,120,10,meal,150,pepper,50,onion,75,mustard,2
-4,Chesscake,70,12,cream,150,milk,150,cheese,100,vanilla,10
-1,Cheese Salad,8,10,cheese,100,lettuce,250,tomato,100,oil,50
-3,French Fries,8,10,potato,300,ketchtup,70,mayonnaise,70,salt,5
-1,Nut Salad,40,18,nut,50,tomato,150,lettuce,205,cucumber,150
-2,Rice,40,1,rice,100,oil,50,salt,5,ginger,5
-4,Rice Pudding,30,8,rice,50,milk,150,vanilla,15,nut,50
-4,Eggplant,90,10,eggplant,150,meat,75,pepper,15,salt,5
-3,Pasta,90,1,cheese,100,pasta,100,tomato,100,oil,50
+4,Chesscake,80,12,cream,150,milk,100,cheese,100,vanilla,10
+1,Cheese Salad,60,10,cheese,100,lettuce,250,tomato,100,oil,30
+3,French Fries,25,10,potato,300,ketchtup,70,mayonnaise,70,salt,5
+1,Nut Salad,55,18,nut,50,tomato,150,lettuce,205,cucumber,150
+2,Rice,50,1,rice,100,oil,30,salt,5,ginger,5
+4,Rice Pudding,75,8,rice,100,milk,150,vanilla,15,nut,50
+4,Eggplant,80,10,eggplant,150,meat,75,pepper,25,salt,5
+3,Pasta,65,1,cheese,70,pasta,100,tomato,100,oil,30
 4,Baklava,100,18,nut,100,flour,50,sugar,100,oil,50
-2,Artichoke,80,18,artichoke,100,lemon,20,tomato,100,oil,50
-3,Spinach,40,12,spinach,100,salt,5,egg,1,oil,50
-1,Lasagna,120,18,cheese,100,pasta,150,meat,100,oil,50
-2,Cordon Bleu,100,10,cheese,100,chicken,350,salt,10,oil,50
-3,Piyaz,50,18,legumes,100,lemon,50,tomato,100,oil,50
+2,Artichoke,120,18,artichoke,100,lemon,20,tomato,100,oil,50
+3,Spinach,65,12,spinach,100,salt,5,egg,1,oil,30
+1,Lasagna,110,18,cheese,100,pasta,150,meat,100,oil,50
+2,Cordon Bleu,75,10,cheese,100,chicken,180,salt,10,oil,40
+3,Piyaz,50,18,legumes,100,lemon,50,tomato,100,oil,45

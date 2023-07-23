@@ -128,8 +128,7 @@ namespace project
         public static void TaxHighToLow()
         {
             Form6 form6 = new Form6();
-            List<Food> sortedFoods = new List<Food>();
-            sortedFoods = foods.OrderByDescending(x => x.price).ToList();
+            List<Food> sortedFoods = sortedFoods = foods.OrderByDescending(x => x.tax).ToList();
             form6.reportRichTextbox.Text = $"{"Name",-10}{"Tax",20}\r";
 
             foreach (Food food in sortedFoods)
@@ -142,8 +141,7 @@ namespace project
         public static void TaxLowToHigh()
         {
             Form6 form6 = new Form6();
-            List<Food> sortedFoods = new List<Food>();
-            sortedFoods = foods.OrderByDescending(x => x.price).ToList();
+            List<Food> sortedFoods = sortedFoods = foods.OrderBy(x => x.tax).ToList();
             form6.reportRichTextbox.Text = $"{"Name",-10}{"Tax",20}\r";
 
             foreach (Food food in sortedFoods)
@@ -153,6 +151,126 @@ namespace project
             }
             form6.Show();
         }
+        public static float CalculateCost(Food food)
+        {
+            float totalCost = 0;
+            foreach (Material material1Repo in Material.materials)
+            {
+                if (food.material1 == material1Repo.name)
+                {
+                    float usedMaterial1 = food.material1Amount * material1Repo.price;
+                    totalCost += usedMaterial1;
+                }
+            }
+            foreach (Material material2Repo in Material.materials)
+            {
+                if (food.material2 == material2Repo.name)
+                {
+                    float usedMaterial2 = food.material2Amount * material2Repo.price;
+                    totalCost += usedMaterial2;
+                }
+            }
+            foreach (Material material3Repo in Material.materials)
+            {
+                if (food.material3 == material3Repo.name)
+                {
+                    float usedMaterial3 = food.material3Amount * material3Repo.price;
+                    totalCost += usedMaterial3;
+                }
+            }
+            foreach (Material material4Repo in Material.materials)
+            {
+                if (food.material4 == material4Repo.name)
+                {
+                    float usedMaterial4 = food.material4Amount * material4Repo.price;
+                    totalCost += usedMaterial4;
+                }
+            }
+            return totalCost;
+        }
+        public static void EndDayReport()
+        {
+            float productionTotal = 0;
+            float soldTotal = 0;
+            Form6 form6 = new Form6();
+            form6.reportRichTextbox.Text = $"{"Food Name",-20}{"Produced Quantity",-20}{"Sold Quantity",-20}\r";
+            foreach (KeyValuePair<Food, int> order in Order.order)
+            {
+                if (order.Value > 0)
+                {
+
+                    form6.reportRichTextbox.Text += $"{order.Key.name,-20}{-(Food.foodCapacity[order.Key]),-45}{order.Value,-45}\r";
+                    productionTotal += CalculateCost(order.Key) * Food.foodCapacity[order.Key];
+                    soldTotal += order.Key.price * order.Value;
+                }
+            }
+            form6.reportRichTextbox.Text += "-----------------------------------------------\r";
+            form6.reportRichTextbox.Text += $"{"Produciton Total", -10}{"Sold Total", -10}\r";
+            form6.reportRichTextbox.Text += $"{-productionTotal, -10}{soldTotal, -10}\r";
+
+
+            form6.Show();
+        }
+        //public static void DailyFoodCapacityWrite()
+        //{
+        //    Form7 form7 = new Form7();
+        //    form7.foodTotalLabel .Text+= $"{"Food Name", -10}{"Cost", -10}{"Total Cost", -10}\r";
+        //    foreach (KeyValuePair<Food, int> food in Food.foodCapacity)
+        //    {
+        //        if (food.Value > 0)
+        //        {
+        //            foreach (Material material1Repo in Material.materials)
+        //            {
+        //                if (food.Key.material1 == material1Repo.name)
+        //                {
+        //                    float usedMaterial = food.Key.material1Amount;
+        //                    float priceMaterial = material1Repo.price * usedMaterial;
+        //                    float totalMaterial = priceMaterial * food.Value;
+        //                    form7.foodTotalLabel.Text += $"{food.Key.name}\r";
+        //                    form7.foodTotalLabel.Text += $"{priceMaterial.ToString()} * {food.Key}\r";
+        //                }
+        //            }
+        //            foreach (Material material2Repo in Material.materials)
+        //            {
+        //                if (food.Key.material2 == material2Repo.name)
+        //                {
+        //                    float usedMaterial = food.Key.material2Amount;
+        //                    float priceMaterial = material2Repo.price * usedMaterial;
+        //                    float totalMaterial = priceMaterial * food.Value;
+        //                    form7.foodTotalLabel.Text += $"{food.Key.name}\r";
+        //                    form7.foodTotalLabel.Text += $"{priceMaterial.ToString()} * {food.Key}\r";
+
+        //                }
+        //            }
+        //            foreach (Material material3Repo in Material.materials)
+        //            {
+        //                if (food.Key.material3 == material3Repo.name)
+        //                {
+        //                    float usedMaterial = food.Key.material3Amount;
+        //                    float priceMaterial = material3Repo.price * usedMaterial;
+        //                    float totalMaterial = priceMaterial * food.Value;
+        //                    form7.foodTotalLabel.Text += $"{food.Key.name}\r";
+        //                    form7.foodTotalLabel.Text += $"{priceMaterial.ToString()} * {food.Key}\r";
+
+
+        //                }
+        //            }
+        //            foreach (Material material4Repo in Material.materials)
+        //            {
+        //                if (food.Key.material4 == material4Repo.name)
+        //                {
+        //                    float usedMaterial = food.Key.material4Amount;
+        //                    float priceMaterial = material4Repo.price * usedMaterial;
+        //                    float totalMaterial = priceMaterial * food.Value;
+        //                    form7.foodTotalLabel.Text += $"{food.Key.name}\r";
+        //                    form7.foodTotalLabel.Text += $"{priceMaterial.ToString()} * {food.Key}\r";
+
+        //                }
+        //            }
+
+        //        }
+        //    }
+        //}
         public static void DailyFoodList()
         {
             foreach (KeyValuePair<Food, int> food in Food.foodCapacity)

@@ -59,7 +59,7 @@
             // 
             orderReviewLabel.AutoSize = true;
             orderReviewLabel.BackColor = Color.Gray;
-            orderReviewLabel.Location = new Point(411, 150);
+            orderReviewLabel.Location = new Point(322, 143);
             orderReviewLabel.Name = "orderReviewLabel";
             orderReviewLabel.Size = new Size(0, 15);
             orderReviewLabel.TabIndex = 2;

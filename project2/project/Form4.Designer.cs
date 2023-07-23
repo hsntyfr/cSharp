@@ -150,7 +150,7 @@
             // foodReportCombobox
             // 
             foodReportCombobox.FormattingEnabled = true;
-            foodReportCombobox.Items.AddRange(new object[] { "Price low to high", "Price high to low", "Tax low to high", "Tax high to low" });
+            foodReportCombobox.Items.AddRange(new object[] { "Price low to high", "Price high to low", "Tax low to high", "Tax high to low", "End day report" });
             foodReportCombobox.Location = new Point(124, 356);
             foodReportCombobox.Name = "foodReportCombobox";
             foodReportCombobox.Size = new Size(121, 23);

@@ -1,6 +1,6 @@
 ﻿namespace project
 {
-    partial class Form6
+    partial class Form7
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            reportRichTextbox = new RichTextBox();
+            foodTotalLabel = new Label();
             SuspendLayout();
             // 
-            // reportRichTextbox
+            // foodTotalLabel
             // 
-            reportRichTextbox.Location = new Point(0, 0);
-            reportRichTextbox.Name = "reportRichTextbox";
-            reportRichTextbox.Size = new Size(788, 450);
-            reportRichTextbox.TabIndex = 0;
-            reportRichTextbox.Text = "";
-            reportRichTextbox.TextChanged += reportRichTextbox_TextChanged;
+            foodTotalLabel.AutoSize = true;
+            foodTotalLabel.Location = new Point(2, 9);
+            foodTotalLabel.Name = "foodTotalLabel";
+            foodTotalLabel.Size = new Size(38, 15);
+            foodTotalLabel.TabIndex = 0;
+            foodTotalLabel.Text = "label1";
             // 
-            // Form6
+            // Form7
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(reportRichTextbox);
-            Name = "Form6";
-            Text = "Report";
-            FormClosing += Form6_FormClosing;
-            Load += Form6_Load;
+            Controls.Add(foodTotalLabel);
+            Name = "Form7";
+            Text = "Form7";
+            FormClosed += Form7_FormClosed;
+            Load += Form7_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private Label label1;
-        public RichTextBox reportRichTextbox;
+
+        public Label foodTotalLabel;
     }
 }

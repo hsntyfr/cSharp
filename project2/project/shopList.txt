@@ -1,4 +1,4 @@
-chicken,41250
-pepper,14000
-onion,19500
-bread,14000
+meat,5900
+pepper,17600
+onion,26000
+bread,16200

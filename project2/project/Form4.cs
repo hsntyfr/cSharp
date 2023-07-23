@@ -107,7 +107,7 @@ namespace project
                 File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
                 File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\food2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
                 File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
-                File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
+                File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\\\recipe.txt");
             }
         }
 
@@ -124,15 +124,15 @@ namespace project
                     Food.WriteFood(newFoods, "C:\\Users\\Hasan\\source\\repos\\project\\project\\food2.txt");
                     Food.WriteRecipe(newFoods, "C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt");
                     File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
-                    File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\food2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
+                    File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\food2.txt", "project\\food.txt");
                     File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
-                    File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
+                    File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt", "project\\recipe.txt");
 
                 }
             }
             Food.foods.Clear();
             foodCombobox.Items.Clear();
-            Food.foods = Food.ReadFood("C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
+            Food.foods = Food.ReadFood("project\\food.txt");
 
             foreach (Food food in Food.foods)
             {
@@ -177,6 +177,9 @@ namespace project
                 case 3:
                     Food.TaxHighToLow();
                     break;
+                case 4:
+                    Food.EndDayReport();
+                    break;
             }
         }
 
@@ -190,7 +193,6 @@ namespace project
                 if (settedFood.Key.name == selectedFoodName)
                 {
                     menuTextbox.Text = $"{settedFood.Key.name},{settedFood.Value}";
-
                 }
             }
         }
@@ -206,9 +208,11 @@ namespace project
 
         private void finalDailyFoodButton_Click(object sender, EventArgs e)
         {
+            Form7 form7 = new Form7();
+            form7.ShowDialog();
             Food.DailyFoodList();
             foodLabel.Text = "Shop list created";
         }
-        
+
     }
 }

@@ -21,10 +21,43 @@ namespace project
         private void okayButton_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
-            form2.orderLabel.Text = "Repo is changed";
+            foreach (KeyValuePair<Food, int> food in Order.order)
+            {
+                //Food key = food.Key;
+                //int value = food.Value;
+                if (food.Value > 0)
+                {
+                    foreach (KeyValuePair<Food, int> order in Food.foodCapacity)
+                    {
+                        if (order.Value > 0)
+                        {
+                            Food.foodCapacity[food.Key] -= order.Value;
+
+                        }
+                    }
+                }
+            }
+
+            //foreach (Food food in Delivery.deliveryCheck)
+            //{
+            //    form2.orderReviewCombobox.Items.Add(food.name);
+            //}
+            //Delivery.deliveryCheck.Clear();
             form2.Show();
             this.Close();
-            form2.orderReviewCombobox.Items.Clear();
+            //Form2 form2 = new Form2();
+            //foreach (KeyValuePair<Food, int> order in Order.order)
+            //{
+            //    if (order.Value > 0 && Food.foodCapacity[order.Key] >= order.Value)
+            //    {
+            //        form2.orderLabel.Text = "ok";
+            //    }
+            //}
+            //form2.orderLabel.Text = "Food capacity is changed";
+            //form2.Show();
+            //this.Close();
+
+            //form2.orderReviewCombobox.Items.Clear();
         }
 
         private void Form5_FormClosing(object sender, FormClosingEventArgs e)
@@ -42,8 +75,8 @@ namespace project
             Form2 form2 = new Form2();
             foreach (KeyValuePair<Food, int> food in Order.order)
             {
-                Food key = food.Key;
-                int value = food.Value;
+                //Food key = food.Key;
+                //int value = food.Value;
                 if (food.Value > 0)
                 {
                     for (int i = 0; i < food.Value; i++)
