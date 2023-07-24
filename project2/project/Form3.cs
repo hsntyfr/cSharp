@@ -52,19 +52,20 @@ namespace project
                 float stock = float.Parse(data[3]);
                 float price = float.Parse(data[4]);
                 Material material = new Material(name, productionDate, expirationDate, stock, price);
-                if (Material.materials.Contains(material))
+                
+                if (Material.SearchMaterial(name))
                 {
-                    materialLabel.Text = "Material wanted add is already exist";
+                    materialLabel.Text = "Material is already exist change material name";
                 }
                 else
                 {
                     Material.materials.Add(material);
-                }
-                materialCombobox.Items.Add(material.name);
+                    materialCombobox.Items.Add(material.name);
+                    materialLabel.Text = "Material is added";
+                }                
                 materialTextBox.Text = string.Empty;
                 Material.Write(Material.materials, "C:\\Users\\Hasan\\source\\repos\\project\\project\\list.txt");
             }
-
         }
 
         private void showButton_Click(object sender, EventArgs e)

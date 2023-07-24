@@ -10,20 +10,22 @@ namespace project
     internal class Order
     {
         public static Dictionary<Food, int> order = new Dictionary<Food, int>();
-        public static Food AddFood(string foodName)
+        public static Food? AddFood(string foodName)
         {
             Form2 form2 = new Form2();
             string selectedFood = foodName;
             int selectedFoodIndex = int.Parse(selectedFood);
+            
             if (Food.foodCapacity.ElementAt(selectedFoodIndex).Value > 0) 
             {
                 order[Food.foods[selectedFoodIndex]] += 1;
+                form2.orderReviewCombobox.Items.Add(Food.foodCapacity.ElementAt(selectedFoodIndex).Key.name);
+                return Food.foods[selectedFoodIndex];
             }
             else
             {
-                form2.orderLabel.Text = "This food is not added cause not exist enough daily capacity";
-            }
-            return Food.foods[selectedFoodIndex];
+                return null;
+            }            
         }
         public static Food RemoveFood(string foodName)
         {

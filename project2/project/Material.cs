@@ -130,15 +130,17 @@ namespace project
                 }
             }
         }
-
-        //public static void LoadMaterials(List<Material> materials)
-        //{
-        //    Form3 form3 = new Form3();
-
-        //    foreach (Material material in materials)
-        //    {
-        //        form3.materialCombobox.Items.Add(material.name);
-        //    }
-        //}
+        public static bool SearchMaterial(string materialName)
+        {
+            foreach (Material item in materials)
+            {
+                if (item.name == materialName)
+                {
+                    return true;
+                }
+                
+            }
+            return false;
+        }
     }
 }

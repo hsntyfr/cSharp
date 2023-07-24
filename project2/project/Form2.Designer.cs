@@ -93,11 +93,10 @@
             // 
             orderLabel.AutoSize = true;
             orderLabel.BackColor = Color.Gray;
-            orderLabel.Location = new Point(524, 45);
+            orderLabel.Location = new Point(425, 47);
             orderLabel.Name = "orderLabel";
-            orderLabel.Size = new Size(77, 15);
+            orderLabel.Size = new Size(0, 15);
             orderLabel.TabIndex = 5;
-            orderLabel.Text = "Order Review";
             // 
             // orderReviewCombobox
             // 

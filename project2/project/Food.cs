@@ -211,6 +211,18 @@ namespace project
 
             form6.Show();
         }
+        public static bool SearchFood(string foodName)
+        {
+            foreach (Food item in foods)
+            {
+                if (item.name == foodName)
+                {
+                    return true;
+                }
+
+            }
+            return false;
+        }
         //public static void DailyFoodCapacityWrite()
         //{
         //    Form7 form7 = new Form7();

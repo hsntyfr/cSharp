@@ -19,6 +19,15 @@ namespace project
         public Form2()
         {
             InitializeComponent();
+
+        }
+        public string LabelText
+        {
+
+            set
+            {
+                this.orderLabel.Text = value;
+            }
         }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
@@ -70,7 +79,15 @@ namespace project
 
         private void addFoodButton_Click(object sender, EventArgs e)
         {
-            orderReviewCombobox.Items.Add(Order.AddFood(orderCombobox.SelectedIndex.ToString()).name);
+            if (Order.AddFood(orderCombobox.SelectedIndex.ToString()) != null)
+            {
+                //orderReviewCombobox.Items.Add(Order.AddFood(orderCombobox.SelectedIndex.ToString()).name);
+            }
+            else
+            {
+                LabelText = "This food is not added cause not exist enough daily capacity";
+
+            }
         }
 
         private void removeFoodButton_Click(object sender, EventArgs e)

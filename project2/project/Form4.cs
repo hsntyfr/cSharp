@@ -55,15 +55,20 @@ namespace project
                 float material4Amount = float.Parse(data[11]);
 
                 Food food = new Food(kind, name, price, tax, material1, material1Amount, material2, material2Amount, material3, material3Amount, material4, material4Amount);
-                Food.foods.Add(food);
-                foodCombobox.Items.Add(food.name);
-                foodLabel.Text = "Food is added";
+                if (Food.SearchFood(name))
+                {
+                    foodLabel.Text = "Material is already exist change material name";
+                }
+                else
+                {
+                    Food.foods.Add(food);
+                    foodCombobox.Items.Add(food.name);
+                    foodLabel.Text = "Food is added";
+                }
                 Food.WriteFood(Food.foods, "C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
                 Food.WriteRecipe(Food.foods, "C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
-
             }
         }
-
         private void showButton_Click(object sender, EventArgs e)
         {
             string selectedFood = foodCombobox.SelectedIndex.ToString();
@@ -147,13 +152,11 @@ namespace project
             form1.Show();
             this.Hide();
         }
-
         private void clearButton_Click(object sender, EventArgs e)
         {
             foodLabel.Text = "Food is not selected\r\n1-Salad\r\n2-Meal\r\n3-Snack\r\n4-Desert\r\n";
             menuTextbox.Text = string.Empty;
         }
-
         private void getReportButton_Click(object sender, EventArgs e)
         {
             switch (foodReportCombobox.SelectedIndex)
@@ -182,30 +185,37 @@ namespace project
                     break;
             }
         }
-
         private void setDailyFoodButton_Click(object sender, EventArgs e)
         {
             string selectedFood = foodCombobox.SelectedIndex.ToString();
             int selectedFoodIndex = int.Parse(selectedFood);
-            string selectedFoodName = Food.foods[selectedFoodIndex].name;
-            foreach (KeyValuePair<Food, int> settedFood in Food.foodCapacity)
+            if (selectedFoodIndex == -1)
             {
-                if (settedFood.Key.name == selectedFoodName)
+                foodLabel.Text = "Food must be selected";
+            }
+            else
+            {
+                string selectedFoodName = Food.foods[selectedFoodIndex].name;
+                foreach (KeyValuePair<Food, int> settedFood in Food.foodCapacity)
                 {
-                    menuTextbox.Text = $"{settedFood.Key.name},{settedFood.Value}";
+                    if (settedFood.Key.name == selectedFoodName)
+                    {
+                        menuTextbox.Text = $"{settedFood.Key.name},{settedFood.Value}";
+                    }
                 }
             }
         }
-
         private void saveDailyFoodButton_Click(object sender, EventArgs e)
         {
             string[] settedFood = menuTextbox.Text.Split(',');
-            string selectedFood = foodCombobox.SelectedIndex.ToString();
-            int selectedFoodIndex = int.Parse(selectedFood);
-            Food.foodCapacity[Food.foods[selectedFoodIndex]] = int.Parse(settedFood[1]);
-            foodLabel.Text = "Capacity is changed";
+            if (settedFood.Length == 2)
+            {
+                string selectedFood = foodCombobox.SelectedIndex.ToString();
+                int selectedFoodIndex = int.Parse(selectedFood);
+                Food.foodCapacity[Food.foods[selectedFoodIndex]] = int.Parse(settedFood[1]);
+                foodLabel.Text = "Capacity is changed";
+            }
         }
-
         private void finalDailyFoodButton_Click(object sender, EventArgs e)
         {
             Form7 form7 = new Form7();
@@ -213,6 +223,5 @@ namespace project
             Food.DailyFoodList();
             foodLabel.Text = "Shop list created";
         }
-
     }
 }
