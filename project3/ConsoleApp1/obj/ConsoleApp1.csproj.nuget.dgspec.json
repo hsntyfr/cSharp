@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/hasantayfur/RiderProjects/project3/ConsoleApp1/ConsoleApp1.csproj": {}
+    "/Users/hasantayfur/Desktop/abc/project3/ConsoleApp1/ConsoleApp1.csproj": {}
   },
   "projects": {
-    "/Users/hasantayfur/RiderProjects/project3/ConsoleApp1/ConsoleApp1.csproj": {
+    "/Users/hasantayfur/Desktop/abc/project3/ConsoleApp1/ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hasantayfur/RiderProjects/project3/ConsoleApp1/ConsoleApp1.csproj",
+        "projectUniqueName": "/Users/hasantayfur/Desktop/abc/project3/ConsoleApp1/ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "/Users/hasantayfur/RiderProjects/project3/ConsoleApp1/ConsoleApp1.csproj",
+        "projectPath": "/Users/hasantayfur/Desktop/abc/project3/ConsoleApp1/ConsoleApp1.csproj",
         "packagesPath": "/Users/hasantayfur/.nuget/packages/",
-        "outputPath": "/Users/hasantayfur/RiderProjects/project3/ConsoleApp1/obj/",
+        "outputPath": "/Users/hasantayfur/Desktop/abc/project3/ConsoleApp1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/hasantayfur/.nuget/NuGet/NuGet.Config"
