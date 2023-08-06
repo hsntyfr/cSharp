@@ -64,23 +64,5 @@ namespace project
         {
             Application.Exit();
         }
-
-        private void endDayButton_Click(object sender, EventArgs e)
-        {
-            //Form7 form7 = new Form7();
-            //form7.foodTotalLabel.Text = $"{"Food Name",-10}{"Produced Quantity",-10}{"Sold Quantity",-10}\r";
-            //foreach (KeyValuePair <Food, int> order in Order.order)
-            //{
-            //    if (order.Value > 0)
-            //    {
-                    
-            //        form7.foodTotalLabel.Text += $"{order.Key.name,-10}{Food.foodCapacity[order.Key],-10}{order.Value,-10}\r";
-
-            //    }
-            //}
-            //form7.Show();
-            //this.Hide();
-
-        }
     }
 }

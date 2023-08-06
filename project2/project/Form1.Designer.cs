@@ -33,7 +33,6 @@
             repoTabOpenButton = new Button();
             label1 = new Label();
             exitButton = new Button();
-            endDayButton = new Button();
             SuspendLayout();
             // 
             // orderTabOpenButton
@@ -90,24 +89,12 @@
             exitButton.UseVisualStyleBackColor = false;
             exitButton.Click += exitButton_Click;
             // 
-            // endDayButton
-            // 
-            endDayButton.BackColor = Color.GreenYellow;
-            endDayButton.Location = new Point(688, 350);
-            endDayButton.Name = "endDayButton";
-            endDayButton.Size = new Size(75, 23);
-            endDayButton.TabIndex = 6;
-            endDayButton.Text = "End Day";
-            endDayButton.UseVisualStyleBackColor = false;
-            endDayButton.Click += endDayButton_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(800, 450);
-            Controls.Add(endDayButton);
             Controls.Add(exitButton);
             Controls.Add(label1);
             Controls.Add(repoTabOpenButton);
@@ -127,6 +114,5 @@
         private Button repoTabOpenButton;
         private Label label1;
         private Button exitButton;
-        private Button endDayButton;
     }
 }

@@ -110,7 +110,7 @@ namespace project
             Form6 form6 = new Form6();
             List<Material> sortedMaterials = new List<Material>();
             sortedMaterials = materials.OrderByDescending(x => x.productionDate).ToList();
-            form6.reportRichTextbox.Text = $"{"Name",-10}{"Stock",20}\r";
+            form6.reportRichTextbox.Text = $"{"Name",-10}{"Production Date",20}\r";
 
             foreach (Material material in sortedMaterials)
             {

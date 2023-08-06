@@ -129,15 +129,15 @@ namespace project
                     Food.WriteFood(newFoods, "C:\\Users\\Hasan\\source\\repos\\project\\project\\food2.txt");
                     Food.WriteRecipe(newFoods, "C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt");
                     File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
-                    File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\food2.txt", "project\\food.txt");
+                    File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\food2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
                     File.Delete("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
-                    File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt", "project\\recipe.txt");
+                    File.Move("C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe2.txt", "C:\\Users\\Hasan\\source\\repos\\project\\project\\recipe.txt");
 
                 }
             }
             Food.foods.Clear();
             foodCombobox.Items.Clear();
-            Food.foods = Food.ReadFood("project\\food.txt");
+            Food.foods = Food.ReadFood("C:\\Users\\Hasan\\source\\repos\\project\\project\\food.txt");
 
             foreach (Food food in Food.foods)
             {

@@ -205,8 +205,8 @@ namespace project
                 }
             }
             form6.reportRichTextbox.Text += "-----------------------------------------------\r";
-            form6.reportRichTextbox.Text += $"{"Produciton Total", -10}{"Sold Total", -10}\r";
-            form6.reportRichTextbox.Text += $"{-productionTotal, -10}{soldTotal, -10}\r";
+            form6.reportRichTextbox.Text += $"{"Produciton Total", -20}{"Sold Total", -20}\r";
+            form6.reportRichTextbox.Text += $"{-productionTotal, -20}{soldTotal, -20}\r";
 
 
             form6.Show();
@@ -379,7 +379,7 @@ namespace project
     }
     public class Desert : Food
     {
-        int kind; //1->milk 2->sugar
+        public int kind; //1->milk 2->sugar
         public Desert(int kind, string name, float price, int tax, string material1, float material1Amount, string material2, float material2Amount, string material3, float material3Amount, string material4, float material4Amount) : base(kind, name, price, tax, material1, material1Amount, material2, material2Amount, material3, material3Amount, material4, material4Amount)
 
         {

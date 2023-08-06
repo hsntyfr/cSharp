@@ -8,26 +8,24 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Hasan\\.nuget\\packages\\": {}
+    "/Users/hasantayfur/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hasan\\source\\repos\\project\\project\\project.csproj",
+      "projectUniqueName": "/Users/hasantayfur/Downloads/project/project/project.csproj",
       "projectName": "project",
-      "projectPath": "C:\\Users\\Hasan\\source\\repos\\project\\project\\project.csproj",
-      "packagesPath": "C:\\Users\\Hasan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hasan\\source\\repos\\project\\project\\obj\\",
+      "projectPath": "/Users/hasantayfur/Downloads/project/project/project.csproj",
+      "packagesPath": "/Users/hasantayfur/.nuget/packages/",
+      "outputPath": "/Users/hasantayfur/Downloads/project/project/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Hasan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/hasantayfur/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -64,7 +62,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
       }
     }
   }

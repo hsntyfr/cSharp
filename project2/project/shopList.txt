@@ -1,4 +1,0 @@
-meat,5900
-pepper,17600
-onion,26000
-bread,16200
